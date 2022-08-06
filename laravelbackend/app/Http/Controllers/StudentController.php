@@ -10,4 +10,8 @@ class StudentController extends Controller
     public function index(){
         return Student::All();
     }
+    public function destroy($id){
+        $student = Student::find($id);
+        return $student;
+     }
 }
