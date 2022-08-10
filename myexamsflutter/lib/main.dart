@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:myexamsflutter/interfaces/ListProprietaire.dart';
 import 'interfaces/Allclient.dart';
 
 void main(List<String> args) {
@@ -72,10 +73,10 @@ class _MyAppState extends State<MyApp> {
           crossAxisCount: 2,
           children: <Widget>[
             MyMenu(
-              title: "Academic",
+              title: "ProfilProprietaire",
               icon: Icons.account_balance,
               warna: Colors.blue,
-              page: Client(),
+              page: Proprietaire(),
             ),
             MyMenu(
               title: "Client",

@@ -17,7 +17,7 @@ class CreateProprietairesTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('postnom');
-            $table->string('genre');
+            $table->string('telephone');
             $table->string('mail');
             $table->string('adresse');
             $table->timestamps();

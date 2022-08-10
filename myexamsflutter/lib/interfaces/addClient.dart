@@ -60,8 +60,9 @@ class _AddclientState extends State<Addclient> {
   }
 
   void AjouterClient() {
-    String url = "http://127.0.0.1:8000/api/clients";
-    http.post(Uri.parse(url), body: {
+    // String url = "http://127.0.0.1:8000/api/clients";
+    String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
+    http.post(Uri.parse(ulr2), body: {
       "noms": noms.text,
       // "genre": dropdownItems,
       "profession": profession.text,
@@ -87,12 +88,12 @@ class _AddclientState extends State<Addclient> {
       ),
       body: Center(
         child: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/logo2.png'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
-            )),
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //   image: AssetImage('assets/images/logo2.png'),
+            //   fit: BoxFit.cover,
+            //   colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+            // )),
             width: 400,
             child: ListView(
               children: <Widget>[
