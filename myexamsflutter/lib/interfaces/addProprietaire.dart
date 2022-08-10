@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:myexamsflutter/interfaces/ListProprietaire.dart';
 import 'package:myexamsflutter/interfaces/UpdateProfilProprietaire.dart';
 import 'package:http/http.dart' as http;
 
@@ -73,8 +74,8 @@ class _ProfilProprietaireState extends State<ProfilProprietaire> {
                   controller: nom,
                   decoration: InputDecoration(
                     icon: Icon(
-                      Icons.supervised_user_circle,
-                      color: Colors.grey,
+                      Icons.person_add,
+                      color: Colors.blue,
                     ),
                     hintText: 'Nom',
                     labelText: 'Nom*',
@@ -89,8 +90,8 @@ class _ProfilProprietaireState extends State<ProfilProprietaire> {
                   controller: postNom,
                   decoration: InputDecoration(
                     icon: Icon(
-                      Icons.supervised_user_circle,
-                      color: Colors.grey,
+                      Icons.person_add,
+                      color: Colors.blue,
                     ),
                     hintText: 'PostNom',
                     labelText: 'PostNom*',
@@ -105,8 +106,8 @@ class _ProfilProprietaireState extends State<ProfilProprietaire> {
                   controller: adresse,
                   decoration: InputDecoration(
                     icon: Icon(
-                      Icons.supervised_user_circle,
-                      color: Colors.grey,
+                      Icons.home,
+                      color: Colors.blue,
                     ),
                     hintText: 'Adresse',
                     labelText: 'Adresse*',
@@ -145,11 +146,11 @@ class _ProfilProprietaireState extends State<ProfilProprietaire> {
                   controller: telephone,
                   decoration: InputDecoration(
                     icon: Icon(
-                      Icons.supervised_user_circle,
-                      color: Colors.grey,
+                      Icons.phone,
+                      color: Colors.blue,
                     ),
-                    hintText: 'Telephone',
-                    labelText: 'Telephone*',
+                    hintText: 'Telephone +243 ...',
+                    labelText: 'Telephone +143 ...*',
                     border: new OutlineInputBorder(
                         borderRadius: new BorderRadius.circular(20.0)),
                   ),
@@ -162,8 +163,10 @@ class _ProfilProprietaireState extends State<ProfilProprietaire> {
                     label: Text("Enregistrer"),
                     onPressed: () {
                       Ajouter();
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => Client()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Proprietaire()));
                     },
                     style: ElevatedButton.styleFrom(
                       side: BorderSide(width: 2.0, color: Colors.blue),

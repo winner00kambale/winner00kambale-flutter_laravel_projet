@@ -208,8 +208,8 @@ class _AddclientState extends State<Addclient> {
                         color: Colors.blue,
                       ),
                       fillColor: Colors.red,
-                      hintText: 'Contact',
-                      labelText: 'Contact*',
+                      hintText: 'Telephone +243 ...',
+                      labelText: 'Telephone +143 ...*',
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(20.0)),
                     ),
