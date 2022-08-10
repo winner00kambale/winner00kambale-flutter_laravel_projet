@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('Gestion de payement'),
+        title: Text('Gestion de payement transport'),
         backgroundColor: Colors.blue[700],
       ),
       backgroundColor: Colors.transparent,
@@ -129,6 +129,7 @@ class MyMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(6.0),
+      color: Colors.transparent,
       child: InkWell(
         onTap: () => Navigator.push(
           context,

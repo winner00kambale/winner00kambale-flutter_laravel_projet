@@ -82,21 +82,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       snapshot.data![i]['profession'],
                       style: TextStyle(fontSize: 15.0),
                     ),
-                    trailing: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          var url =
-                              "http://127.0.0.1:8000/api/clients/delete/{id}";
-                          http.delete(Uri.parse(url),
-                              body: {'id': snapshot.data![i]['id']});
-                        });
-                        debugPrint("edit delete");
-                      },
-                      child: Icon(
-                        Icons.delete,
-                        color: Colors.grey,
-                      ),
-                    ),
+                    // trailing: GestureDetector(
+                    //   onTap: () {
+                    //     setState(() {
+                    //       var url =
+                    //           "http://127.0.0.1:8000/api/clients/delete/{id}";
+                    //       http.delete(Uri.parse(url),
+                    //           body: {'id': snapshot.data![i]['id']});
+                    //     });
+                    //     debugPrint("edit delete");
+                    //   },
+                    //   child: Icon(
+                    //     Icons.delete,
+                    //     color: Colors.grey,
+                    //   ),
+                    // ),
                   );
                   // );
                 },

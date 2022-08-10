@@ -87,6 +87,12 @@ class _AddclientState extends State<Addclient> {
       ),
       body: Center(
         child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/logo2.png'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+            )),
             width: 400,
             child: ListView(
               children: <Widget>[
