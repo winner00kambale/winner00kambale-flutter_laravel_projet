@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'interfaces/Allclient.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
@@ -23,19 +24,19 @@ class _MyAppState extends State<MyApp> {
         title: Text('Gestion de payement'),
         backgroundColor: Colors.blue[700],
       ),
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.transparent,
       drawer: new Drawer(
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: new Text(
-                "KAMBALE KARAHIRE ADMIN",
+                "WINNER KAMBALE ADMIN",
                 style:
                     new TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
               ),
               accountEmail: new Text("winnerkambale@icloud.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage("hgchg"),
+                backgroundImage: AssetImage('assets/images/paye.png'),
               ),
               decoration: new BoxDecoration(color: Colors.blue[700]),
             ),
@@ -59,7 +60,14 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(35.0),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage('assets/images/paye.png'),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+        )),
+        padding:
+            EdgeInsets.only(left: 35.0, right: 35.0, top: 10.0, bottom: 10.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
@@ -67,31 +75,37 @@ class _MyAppState extends State<MyApp> {
               title: "Academic",
               icon: Icons.account_balance,
               warna: Colors.blue,
+              page: Client(),
             ),
             MyMenu(
               title: "Client",
               icon: Icons.info_outline,
               warna: Colors.blue,
+              page: Client(),
             ),
             MyMenu(
               title: "Academic",
               icon: Icons.school,
               warna: Colors.blue,
+              page: Client(),
             ),
             MyMenu(
               title: "Academic",
               icon: Icons.person_pin,
               warna: Colors.blue,
+              page: Client(),
             ),
             MyMenu(
               title: "Academic",
               icon: Icons.local_library,
               warna: Colors.red,
+              page: Client(),
             ),
             MyMenu(
               title: "Academic",
               icon: Icons.library_books,
               warna: Colors.teal,
+              page: Client(),
             ),
           ],
         ),
@@ -101,16 +115,25 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyMenu extends StatelessWidget {
-  MyMenu({required this.title, required this.icon, required this.warna});
+  MyMenu(
+      {required this.title,
+      required this.icon,
+      required this.warna,
+      required this.page});
   final String title;
   final IconData icon;
   final MaterialColor warna;
+  final Widget page;
+
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(6.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        ),
         splashColor: Colors.blue,
         child: Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[

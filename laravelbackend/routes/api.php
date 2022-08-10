@@ -10,6 +10,8 @@ Route::get('/student/{id}',[StudentController::class, 'destroy']);
 //Client
 Route::post('/clients', [ClientController::class ,'store']);
 Route::get('/clientsAll', [ClientController::class, 'index']);
+Route::get('/clients/delete/{id}',[ClientController::class, 'delete']);
+Route::get('/clients/{id}',[ClientController::class, 'edit']);
 
 //Voiture
 Route::get('/categorieAll',[CategorieController::class, 'index']);
