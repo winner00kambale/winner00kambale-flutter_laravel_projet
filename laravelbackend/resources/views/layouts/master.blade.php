@@ -142,7 +142,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="{{ route('client.index') }}">Reception</a></li>
-							<li><a href="advanced-components.html">Advanced Components</a></li>
+							<li><a href="{{ route('compte.index') }}">Chargement Compte</a></li>
 							<li><a href="form-wizard.html">Form Wizard</a></li>
 							<li><a href="html5-editor.html">HTML5 Editor</a></li>
 							<li><a href="form-pickers.html">Form Pickers</a></li>
@@ -170,16 +170,19 @@
 		@yield('modal')
 	</div>
 	<!-- js -->
+	
 	<script src="{{ asset('vendors/scripts/core.js') }}"></script>
     <script src="{{ asset('vendors/scripts/script.min.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/process.js') }}"></script>
+	<script src="{{ asset('vendors/scripts/datatable-setting.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/layout-settings.js') }}"></script>
 	<script src="{{ asset('src/plugins/apexcharts/apexcharts.min.js') }}"></script>
+	
 	<script src="{{ asset('src/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
-
+	
 	<!-- buttons for Export datatable -->
 	<script src="{{ asset('src/plugins/datatables/js/dataTables.buttons.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/buttons.bootstrap4.min.js') }}"></script>
@@ -189,7 +192,7 @@
 	<script src="{{ asset('src/plugins/datatables/js/pdfmake.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/vfs_fonts.js') }}"></script> -->
 
-	<!-- <script src="{{ asset('vendors/scripts/datatable-setting.js') }}"></script> -->
+	
 	<!-- Datatable Setting js -->
 	<script src="{{ asset('/script.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/dashboard.js') }}"></script>

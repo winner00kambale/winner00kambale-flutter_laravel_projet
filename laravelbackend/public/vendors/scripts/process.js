@@ -20,8 +20,8 @@ function animateValue(id, start, end, duration) {
     
 	var timer = setInterval(function() {
 		current += increment;
-		$(obj).text(current + "%");
-		$("#bar1").css('width', current+"%");
+		$(obj).text(current + "");
+		$("#bar1").css('width', current+"");
       //obj.innerHTML = current;
 		if (current == end) {
 			clearInterval(timer);

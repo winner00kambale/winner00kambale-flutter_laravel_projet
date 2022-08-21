@@ -39,7 +39,7 @@ class ClientController extends Controller
             $customer->contact = $request->input('contact');
             $customer->montant_compte = $request->input('montant_compte');
             $customer->save();
-            return response()->json(['message'=>'inserted successfully'],200);            
+            return redirect()->route('client.index')->with('message','insertion avec succes');            
     }
     public function update(Request $request,$id){
             $customer = Client::find($id);

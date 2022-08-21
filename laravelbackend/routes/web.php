@@ -14,3 +14,4 @@ Route::get('/client/edit/{id}',[ClientController::class, 'edit'])->name('client.
 
 // chargement compte
 Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('compte.store');
+Route::get('/copmte/show', [ChargementCompteController::class, 'index'])->name('compte.index');
