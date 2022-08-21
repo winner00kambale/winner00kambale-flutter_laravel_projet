@@ -45,7 +45,8 @@
 													<i class="dw dw-more"></i>
 												</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" id="button" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                                <!-- <button type="button" id="button" class="btn btn-info edit">edit</button> -->
 												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 											</div>
@@ -65,3 +66,57 @@
         </div>
     </div>
 @endsection
+@section('modal')
+
+ <!-- modal-star modification -->
+ <div class="modal fade" id="Modalmodif" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ModalLabel">modifier payé</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                <form method="POST" action="">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="hidden" name="id" id="id" value=""> <br>
+                                    <label for="noms">noms</label>
+                                    <input type="text" name="nom" id="noms" value="" class="form-control btn-round" readonly>
+                                    <label for="montant">montant</label>
+                                    <input type="number" name="montant" id="montant" value=""
+                                        class="form-control btn-round">
+                                    <label for="date">date</label>
+                                    <input type="date" name="date" id="date" value=""
+                                        class="form-control btn-round" readonly>
+                                </div>
+                            </div>
+                                <input type="submit" id="button" value="Modifier" class="btn btn-info btn-round">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection
+    @section('script')
+    <script>
+        $(document).ready(function() {
+            $('.edit').on('click', function() {
+                $('#Modalmodif').modal('show');
+                $tr = $(this).closest('tr');
+                var data = $tr.children("td").map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#id').val(data[0]);
+                $('#noms').val(data[1]);
+                $('#montant').val(data[2]);
+                $('#date').val(data[3]);
+            });
+        });
+    </script>
+    @endsection

@@ -138,12 +138,11 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Menus</span>
+							<span class="micon dw dw-edit2"></span><span class="mtext">Reception</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="{{ route('client.index') }}">Reception</a></li>
-							<li><a href="{{ route('compte.index') }}">Chargement Compte</a></li>
-							<li><a href="form-wizard.html">Form Wizard</a></li>
+							<li><a href="{{ route('client.index') }}">Clients</a></li>
+							<li><a href="form-wizard.html">Chaffeurs</a></li>
 							<li><a href="html5-editor.html">HTML5 Editor</a></li>
 							<li><a href="form-pickers.html">Form Pickers</a></li>
 							<li><a href="image-cropper.html">Image Cropper</a></li>
@@ -152,11 +151,11 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+							<span class="micon dw dw-library"></span><span class="mtext">Comptabilite</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="basic-table.html">Basic Tables</a></li>
-							<li><a href="datatable.html">DataTables</a></li>
+						<li><a href="{{ route('compte.index') }}">Chargement Compte</a></li>
+						<li><a href="{{ route('compte.index') }}">Payement</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -168,6 +167,7 @@
 	<div class="main-container">
 		@yield('contenu')
 		@yield('modal')
+		@yield('script')
 	</div>
 	<!-- js -->
 	

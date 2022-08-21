@@ -17,6 +17,7 @@ class CreatePayementsTable extends Migration
             $table->increments('id');
             $table->integer('client_id')->unsigned();
             $table->integer('affectation_id')->unsigned();
+            $table->integer('nombre_place');
             $table->float('montant');
             $table->date('date_payement');
             $table->foreign('client_id')->references('id')->on('clients');
