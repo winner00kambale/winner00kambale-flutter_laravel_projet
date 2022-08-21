@@ -6,6 +6,7 @@ import 'interfaces/Allclient.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -22,8 +23,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        // debugShowCheckedModeBanner: false,
         title: Text('Gestion de payement transport'),
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Color(0x029B13),
       ),
       backgroundColor: Colors.transparent,
       drawer: new Drawer(

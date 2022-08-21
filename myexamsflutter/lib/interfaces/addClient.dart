@@ -1,5 +1,8 @@
+import 'dart:io';
+import 'dart:math' as Math;
 import 'package:flutter/material.dart';
 import 'package:myexamsflutter/interfaces/Allclient.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
 class Addclient extends StatefulWidget {
@@ -26,6 +29,7 @@ class _AddclientState extends State<Addclient> {
       adresse = new TextEditingController(),
       contact = new TextEditingController(),
       mail = new TextEditingController();
+  late File _image;
   List<String> genre = ["Masculin", "Feminin"];
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> MenuItems = [
@@ -75,6 +79,26 @@ class _AddclientState extends State<Addclient> {
       "montant_compte": a,
     });
   }
+
+//   Future getImageCamera() async {
+//     try {
+//       var imageFile = await ImagePicker.pickImage(source: ImageSource.camera);
+//       final tempDir = await getTemporaryDirectory();
+//       final path = tempDir.path;
+// //String title=ctitle.text;
+//       int rand = new Math.Random().nextInt(1000000);
+//       Img.Image image = Img.decodeImage(imageFile.readAsBytesSync());
+//       Img.Image smallerImg = Img.copyResize(image, width: 500);
+//       var compressImg = new File("$path/image_$rand.jpg")
+//         ..writeAsBytesSync(Img.encodeJpg(smallerImg, quality: 85));
+
+//       setState(() {
+//         _image = compressImg;
+//       });
+//     } catch (ex) {
+//       print('Erreur $ex');
+//     }
+//   }
 
   Widget build(BuildContext context) {
     return Scaffold(
