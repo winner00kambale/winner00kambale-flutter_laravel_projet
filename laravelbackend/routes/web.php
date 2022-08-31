@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
+use App\Http\Controllers\{AffectationController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
 
 
 
@@ -22,6 +22,9 @@ Route::get('/chauffeur/edit/{id}',[ChauffeurController::class, 'edit'])->name('c
 // chargement compte
 Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('compte.store');
 Route::get('/copmte/show', [ChargementCompteController::class, 'index'])->name('compte.index');
+
+//Affectation
+Route::post('/affectation/add', [AffectationController::class, 'store'])->name('affectation.store');
 
 //Qr code 
 Route::get('/generateCard/{id}', [ClientController::class, 'generateCard'])->name('generateCard');

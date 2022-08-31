@@ -16,7 +16,7 @@
                 <!--form panels-->
                 <div class="row">
                     <div class="col-12 col-lg-8 m-auto">
-                        <form class="multisteps-form__form"  method="post">
+                        <form class="multisteps-form__form" action="{{ route('affectation.store') }}"  method="post">
                         @csrf
                             <!--single form panel-->
                             <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -24,13 +24,13 @@
                                 <div class="multisteps-form__content">
                                     <div class="form-row mt-4">
                                         <div class="col-12 col-sm-6">
-                                            <input type="hidden" name="client_id" value="{{ $chauffeur->id }}">
+                                            <input type="hidden" name="id" value="{{ $chauffeur->id }}">
                                             <label for="">Noms du chauffeur</label>
-                                            <input class="multisteps-form__input form-control" type="text" value="{{ $chauffeur->noms }}" name="noms" readonly required/>
+                                            <input class="multisteps-form__input form-control" type="text" value="{{ $chauffeur->noms }}" name="chauffeur_id" readonly required/>
                                         </div>
                                         <div class="col-12 col-sm-6">
                                             <label for="">Vehicules (Marque/Couleur/Plaque)</label>
-                                            <select class="multisteps-form__select form-control" name="genre" required>
+                                            <select class="multisteps-form__select form-control" name="voiture_id" required>
                                                 <option selected="selected">selectionnez le vehicule...</option>
                                                 @foreach ($voiture as $item)
                                                     <option value="{{ $item->id }}">{{ $item->marque .'   '.$item->couleur .'   '.$item->couleur }}</option>
