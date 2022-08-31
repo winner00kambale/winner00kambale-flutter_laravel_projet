@@ -18,10 +18,14 @@ Route::get('/chaffeur', [ChauffeurController::class ,'showChauffeur'])->name('ch
 Route::post('/chauffeur/add',[ChauffeurController::class, 'store'])->name('chauffeur.add');
 Route::get('/chauffeur/edit/{id}',[ChauffeurController::class, 'edit'])->name('chauffeur.edit');
 
-
 // chargement compte
 Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('compte.store');
 Route::get('/copmte/show', [ChargementCompteController::class, 'index'])->name('compte.index');
+
+//proprietaires
+Route::get('/addproprietaire',function(){return view('pages.proprietaires.addproprietaire');})->name('addproprietaire');
+Route::get('/proprietaire', [ProprietaireController::class, 'showProprietaire'])->name('proprietaire.index');
+Route::post('/proprietaire/add', [ProprietaireController::class, 'store'])->name('proprietaire.add');
 
 //Affectation
 Route::post('/affectation/add', [AffectationController::class, 'store'])->name('affectation.store');

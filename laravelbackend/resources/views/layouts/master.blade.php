@@ -152,8 +152,8 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="{{ route('client.index') }}">Clients</a></li>
-							<li><a href="{{ route('chaffeur.index') }}">Chaffeurs</a></li>
-							<li><a href="html5-editor.html">HTML5 Editor</a></li>
+							<li><a href="{{ route('proprietaire.index') }}">Proprietaires</a></li>
+							<li><a href="{{ route('chaffeur.index') }}">Chaffeurs</a></li>							
 							<li><a href="form-pickers.html">Form Pickers</a></li>
 							<li><a href="image-cropper.html">Image Cropper</a></li>
 							<li><a href="image-dropzone.html">Image Dropzone</a></li>
