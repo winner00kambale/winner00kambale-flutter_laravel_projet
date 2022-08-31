@@ -17,7 +17,7 @@
                         <form class="multisteps-form__form" action="" method="">
                             <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
                             @if (\Session::has('message'))
-                                <div style="text-align: center" class="alert alert-succes">{{ \Session::get('message') }}</div>
+                                <div style="text-align: center" class="alert alert-success">{{ \Session::get('message') }}</div>
                             @endif
                                 <h3 class="multisteps-form__title">Liste de Chargement Compte</h3>
                                 <div class="multisteps-form__content">

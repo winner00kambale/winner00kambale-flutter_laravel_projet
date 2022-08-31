@@ -5,7 +5,7 @@
                     <a href="{{ route('addclient') }}" class="btn btn-primary" style="border-radius: 20px;">new custom</a>
 					</div>
 					@if (\Session::has('message'))
-                        <div style="text-align: center" class="alert alert-succes">{{ \Session::get('message') }}</div>
+                        <div style="text-align: center" class="alert alert-success">{{ \Session::get('message') }}</div>
                     @endif
 					<div class="pd-10">
 						<h4 class="h4 text-center">Liste des clients</h4>

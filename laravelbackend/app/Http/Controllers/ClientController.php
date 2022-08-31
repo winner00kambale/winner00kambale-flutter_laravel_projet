@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Codedge\Fpdf\Fpdf\Fpdf;
 
 class ClientController extends Controller
 {
@@ -63,5 +65,11 @@ class ClientController extends Controller
         $client = Client::find($id);
         // $data = $client[0];
         return view('pages.chargementCompte',compact('client'));
+     }
+
+     public function generateCard($id){
+        $data = Client::find($id);
+        $qrcode = QrCode::size(80)->generate($data->id);
+         return view('pages.qrcode',compact('qrcode','data')); 
      }
 }
