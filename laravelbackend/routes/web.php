@@ -18,4 +18,4 @@ Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('
 Route::get('/copmte/show', [ChargementCompteController::class, 'index'])->name('compte.index');
 
 //Qr code 
-Route::get('/qrcode/{id}', [ClientController::class, 'generateCard'])->name('generate');
+Route::get('/generateCard/{id}', [ClientController::class, 'generateCard'])->name('generateCard');
