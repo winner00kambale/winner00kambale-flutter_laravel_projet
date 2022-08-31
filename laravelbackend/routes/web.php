@@ -13,7 +13,10 @@ Route::post('/client/add',[ClientController::class, 'store'])->name('client.add'
 Route::get('/client/edit/{id}',[ClientController::class, 'edit'])->name('client.edit');
 
 //Chauffeur
+Route::get('/addchauffeur',function(){return view('pages.chauffeur.addchauffeur');})->name('addchauffeur');
 Route::get('/chaffeur', [ChauffeurController::class ,'showChauffeur'])->name('chaffeur.index');
+Route::post('/chauffeur/add',[ChauffeurController::class, 'store'])->name('chauffeur.add');
+Route::get('/chauffeur/edit/{id}',[ChauffeurController::class, 'edit'])->name('chauffeur.edit');
 
 
 // chargement compte
