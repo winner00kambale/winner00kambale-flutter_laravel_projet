@@ -12,6 +12,9 @@ Route::get('/clients', [ClientController::class ,'showClient'])->name('client.in
 Route::post('/client/add',[ClientController::class, 'store'])->name('client.add');
 Route::get('/client/edit/{id}',[ClientController::class, 'edit'])->name('client.edit');
 
+//Chauffeur
+Route::get('/chaffeur', [ChauffeurController::class ,'showChauffeur'])->name('chaffeur.index');
+
 
 // chargement compte
 Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('compte.store');
