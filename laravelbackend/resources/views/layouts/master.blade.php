@@ -173,7 +173,7 @@
 						</a>
 						<ul class="submenu">
 						<li><a href="{{ route('compte.index') }}">Chargement Compte</a></li>
-						<li><a href="{{ route('compte.index') }}">Payement</a></li>
+						<li><a href="{{ route('payement.index') }}">Payement</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -182,7 +182,7 @@
 						</a>
 						<ul class="submenu">
 						<li><a href="{{ route('paramettrePrice') }}">Update price</a></li>
-						<li><a href="">Payement</a></li>
+						<li><a href="#">Payement</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -2,25 +2,32 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController};
+use App\Http\Controllers\{PayementController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
 
 //Client
-Route::post('/clients', [ClientController::class ,'store']);
-
+Route::post('/clients', [ClientController::class ,'storeClient']);
 Route::get('/clientsAll', [ClientController::class, 'index']);
-Route::get('/clients/delete/{id}',[ClientController::class, 'delete']);
-Route::get('/clients/{id}',[ClientController::class, 'edit']);
+Route::get('/clients/{id}',[ClientController::class, 'editClient']);
 
 //proprietaire
 Route::get('/proprietaire', [ProprietaireController::class, 'index']);
-
-//Voiture
-Route::get('/categorieAll',[CategorieController::class, 'index']);
-Route::post('/categorie',[CategorieController::class, 'store']);
-
+Route::post('/proprietaire/save', [ProprietaireController::class, 'storeProprietaire']);
 
 //chaffeur
-Route::get('/chaffeurAll',[ChauffeurController::class, 'index']);
+Route::get('/chaffeurAll', [ChauffeurController::class, 'index']);
+Route::post('/chauffeur', [ChauffeurController::class, 'storeChauffeur']);
+
+//Chargement Du Compte
+Route::get('/CompteAll', [ChargementCompteController::class, 'allChargement']);
+Route::post('/CompteSave', [ChargementCompteController::class, 'storeChargement']);
+
+//Payement
+Route::get('/payementAll', [PayementController::class, 'index']);
+Route::post('/payementSave', [PayementController::class, 'store']);
+
+
+
+
 
 
 

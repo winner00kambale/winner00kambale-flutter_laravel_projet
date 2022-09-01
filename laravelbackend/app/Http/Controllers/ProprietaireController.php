@@ -34,4 +34,15 @@ class ProprietaireController extends Controller
         $proprietaire->save();
         return redirect()->route('proprietaire.index')->with('message','insertion avec succes');
     }
+    
+    //API
+    public function storeProprietaire(Request $request){
+        $proprietaire = new Proprietaire;
+        $proprietaire->nom = $request->input('nom');
+        $proprietaire->postnom = $request->input('postnom');
+        $proprietaire->telephone =$request->input('telephone');
+        $proprietaire->mail = $request->input('mail');
+        $proprietaire->adresse = $request->input('adresse');
+        $proprietaire->save();
+    }
 }

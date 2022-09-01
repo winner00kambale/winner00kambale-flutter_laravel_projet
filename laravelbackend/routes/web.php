@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ParameterPriceController,AffectationController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
+use App\Http\Controllers\{PayementController,ParameterPriceController,AffectationController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
 
 
 
@@ -21,6 +21,9 @@ Route::get('/chauffeur/edit/{id}',[ChauffeurController::class, 'edit'])->name('c
 // chargement compte
 Route::post('/compte/add', [ChargementCompteController::class, 'store'])->name('compte.store');
 Route::get('/copmte/show', [ChargementCompteController::class, 'index'])->name('compte.index');
+
+//payement
+Route::get('/payement', [PayementController::class, 'ShowPayement'])->name('payement.index');
 
 //proprietaires
 Route::get('/addproprietaire',function(){return view('pages.proprietaires.addproprietaire');})->name('addproprietaire');

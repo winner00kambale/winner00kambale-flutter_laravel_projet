@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ChargementCompte;
 
 class ChargementCompteController extends Controller
 {
@@ -21,5 +22,16 @@ class ChargementCompteController extends Controller
             $request->montant
         ]);
         return redirect()->route('compte.index')->with('message','chargement avec succes');
+    }
+
+    //API
+    public function allChargement(){
+        return ChargementCompte::All();
+    }
+    public function storeChargement(Request $request){
+        \DB::statement("call chargementCompte(?,?)",[
+            $request->client_id,
+            $request->montant
+        ]);
     }
 }
