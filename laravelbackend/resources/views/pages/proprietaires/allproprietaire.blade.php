@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
                         <div class="multisteps-form__progress">
-                            <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Chargement du compte</button>
+                            <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Proprietaires</button>
                         </div>
                     </div>
                 </div>

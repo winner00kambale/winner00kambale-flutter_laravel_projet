@@ -12,10 +12,6 @@ class AffectationController extends Controller
             'chauffeur_id' => 'required',
             'voiture_id' => 'required'
         ]);
-        // $affectation = new Affectation;
-        // $affectation->chauffeur_id = $request->input('chauffeur_id');
-        // $affectation->voiture_id = $request->input('voiture_id');
-        // $affectation->save();
         \DB::statement("call sp_affectation(?,?)",[
             $request->chauffeur_id,
             $request->voiture_id

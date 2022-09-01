@@ -46,8 +46,6 @@
             </form>
         </div>
     </div>
-
-
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
@@ -56,6 +54,19 @@
 					</a>
 				</div>
 			</div>
+			<div class="user-info-dropdown">
+            	<div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="/vendors/images/photo1.jpg" alt="img">
+						</span>
+                    <span class="user-name">Winner's APP</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                    <a class="dropdown-item" href=""><i class="dw dw-logout"></i> Log Out</a>
+                </div>
+            </div>
+        </div>
 		</div>
 	</div>
 
@@ -143,7 +154,7 @@
 							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="index.html">Dashboard</a></li>
+							<li><a href=" {{route('dashboard') }}">Dashboard</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -154,9 +165,6 @@
 							<li><a href="{{ route('client.index') }}">Clients</a></li>
 							<li><a href="{{ route('proprietaire.index') }}">Proprietaires</a></li>
 							<li><a href="{{ route('chaffeur.index') }}">Chaffeurs</a></li>							
-							<li><a href="form-pickers.html">Form Pickers</a></li>
-							<li><a href="image-cropper.html">Image Cropper</a></li>
-							<li><a href="image-dropzone.html">Image Dropzone</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -166,6 +174,15 @@
 						<ul class="submenu">
 						<li><a href="{{ route('compte.index') }}">Chargement Compte</a></li>
 						<li><a href="{{ route('compte.index') }}">Payement</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-settings2"></span><span class="mtext">Paramettres</span>
+						</a>
+						<ul class="submenu">
+						<li><a href="{{ route('paramettrePrice') }}">Update price</a></li>
+						<li><a href="">Payement</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -181,8 +198,6 @@
 	</div>
 	<!-- js -->
 	
-
-	
 	<script src="{{ asset('vendors/scripts/core.js') }}"></script>
     <script src="{{ asset('vendors/scripts/script.min.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/process.js') }}"></script>
@@ -197,13 +212,6 @@
 	<!-- buttons for Export datatable -->
 	<script src="{{ asset('src/plugins/datatables/js/dataTables.buttons.min.js') }}"></script>
 	<script src="{{ asset('src/plugins/datatables/js/buttons.bootstrap4.min.js') }}"></script>
-	<!-- <script src="{{ asset('src/plugins/datatables/js/buttons.print.min.js') }}"></script>
-	<script src="{{ asset('src/plugins/datatables/js/buttons.html5.min.js') }}"></script>
-	<script src="{{ asset('src/plugins/datatables/js/buttons.flash.min.js') }}"></script>
-	<script src="{{ asset('src/plugins/datatables/js/pdfmake.min.js') }}"></script>
-	<script src="{{ asset('src/plugins/datatables/js/vfs_fonts.js') }}"></script> -->
-
-	
 	<!-- Datatable Setting js -->
 	<script src="{{ asset('/script.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/dashboard.js') }}"></script>

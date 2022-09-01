@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AffectationController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
+use App\Http\Controllers\{ParameterPriceController,AffectationController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController};
 
 
 
-Route::get('/', function () {return view('layouts.dashboard');});
+Route::get('/', function () {return view('layouts.dashboard');})->name('dashboard');
 
 Route::get('/addclient',function(){return view('pages.clientAdd');})->name('addclient');
 Route::get('/clients', [ClientController::class ,'showClient'])->name('client.index');
@@ -32,3 +32,7 @@ Route::post('/affectation/add', [AffectationController::class, 'store'])->name('
 
 //Qr code 
 Route::get('/generateCard/{id}', [ClientController::class, 'generateCard'])->name('generateCard');
+
+//Paramettre prix
+Route::get('/Price', [ParameterPriceController::class, 'GetPrice'])->name('paramettrePrice');
+Route::post('/updatePrice', [ParameterPriceController::class, 'store'])->name('Price.price');
