@@ -99,15 +99,28 @@ class _ClientNewState extends State<ClientNew> {
               ),
               Padding(
                 padding: EdgeInsets.all(2.0),
-                child: DropdownButtonFormField<String>(
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                child: Container(
+                  // width: 300,
+                  margin: EdgeInsets.only(left: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    border: Border.all(color: Colors.black12, width: 2),
                   ),
-                  items: items.map(buildMenuItem).toList(),
-                  hint: Text("Selectionner le genre"),
-                  isExpanded: true,
-                  value: value,
-                  onChanged: (value) => setState(() => this.value = value),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      iconSize: 25,
+                      icon: Icon(
+                        Icons.arrow_circle_down_sharp,
+                      ),
+                      items: items.map(buildMenuItem).toList(),
+                      hint: Text("Selectionner le genre"),
+                      isExpanded: true,
+                      value: value,
+                      onChanged: (value) => setState(
+                        () => this.value = value,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Padding(
@@ -126,17 +139,38 @@ class _ClientNewState extends State<ClientNew> {
                   ),
                 ),
               ),
+              // Padding(
+              //   padding: EdgeInsets.only(left: 30, top: 2, bottom: 2),
+              //   child: DropdownButton<String>(
+              //     items: items2.map(buildMenuItem2).toList(),
+              //     hint: Text("Selectionner etat civil"),
+              //     isExpanded: true,
+              //     value: value2,
+              //     onChanged: (value2) => setState(() => this.value2 = value2),
+              //   ),
+              // ),
               Padding(
-                padding: EdgeInsets.only(left: 30, top: 2, bottom: 2),
-                child: DropdownButton<String>(
-                  items: items2.map(buildMenuItem2).toList(),
-                  hint: Text("Selectionner etat civil"),
-                  isExpanded: true,
-                  value: value2,
-                  onChanged: (value2) => setState(() => this.value2 = value2),
-                  icon: Padding(
-                    padding: EdgeInsets.only(left: 30),
-                    child: Icon(Icons.arrow_circle_down_sharp),
+                padding: EdgeInsets.all(2.0),
+                child: Container(
+                  // width: 300,
+                  margin: EdgeInsets.only(left: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    border: Border.all(color: Colors.black12, width: 2),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      iconSize: 25,
+                      icon: Icon(
+                        Icons.arrow_circle_down_sharp,
+                      ),
+                      items: items2.map(buildMenuItem2).toList(),
+                      hint: Text("Selectionner etat civil"),
+                      isExpanded: true,
+                      value: value2,
+                      onChanged: (value2) =>
+                          setState(() => this.value2 = value2),
+                    ),
                   ),
                 ),
               ),
@@ -218,7 +252,7 @@ class _ClientNewState extends State<ClientNew> {
                   obscureText: false,
                   controller: mail,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16, color: Colors.green[700]),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     icon: Icon(
@@ -235,7 +269,7 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.only(left: 90, top: 7, right: 80),
                   child: OutlinedButton.icon(
                     icon: Icon(
                       Icons.save,
@@ -268,13 +302,13 @@ DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,
       child: Text(
         item,
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(fontSize: 15),
       ),
     );
 DropdownMenuItem<String> buildMenuItem2(String items2) => DropdownMenuItem(
       value: items2,
       child: Text(
         items2,
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(fontSize: 15),
       ),
     );
