@@ -29,12 +29,14 @@ class _ClientNewState extends State<ClientNew> {
     // String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
     http.post(Uri.parse(url), body: {
       "noms": noms.text,
+      "genre": value,
       "profession": profession.text,
+      "etatcivil": value2,
       "type_piece": typepiece.text,
       "numero_piece": numPiece.text,
       "adresse": adresse.text,
-      "contact": contact.text,
       "mail": mail.text,
+      "contact": contact.text,
       "montant_compte": a,
     });
   }
@@ -106,7 +108,7 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: EdgeInsets.only(left: 4.0, top: 2.0, bottom: 2.0),
                 child: TextField(
                   controller: profession,
                   decoration: InputDecoration(
@@ -122,13 +124,13 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: EdgeInsets.only(left: 4.0, top: 2.0, bottom: 2.0),
                 child: DropdownButton<String>(
-                  items: items.map(buildMenuItem).toList(),
+                  items: items.map(buildMenuItem2).toList(),
                   hint: Text("Selectionner etat civil"),
                   isExpanded: true,
                   value: value2,
-                  onChanged: (value) => setState(() => this.value2 = value),
+                  onChanged: (value2) => setState(() => this.value2 = value2),
                 ),
               ),
               Padding(
@@ -234,7 +236,7 @@ class _ClientNewState extends State<ClientNew> {
                     ),
                     label: Text("Enregistrer"),
                     onPressed: () {
-                      // AjouterClient();
+                      AjouterClient();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -259,6 +261,13 @@ DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,
       child: Text(
         item,
+        style: TextStyle(fontSize: 20),
+      ),
+    );
+DropdownMenuItem<String> buildMenuItem2(String item2) => DropdownMenuItem(
+      value: item2,
+      child: Text(
+        item2,
         style: TextStyle(fontSize: 20),
       ),
     );
