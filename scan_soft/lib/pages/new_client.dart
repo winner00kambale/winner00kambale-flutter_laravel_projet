@@ -186,7 +186,10 @@ class _ClientNewState extends State<ClientNew> {
                   style: TextStyle(fontSize: 16, color: Colors.green[700]),
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    icon: Icon(Icons.email),
+                    icon: Icon(
+                      Icons.email,
+                      color: Colors.green[700],
+                    ),
                     labelText: "Adresse Mail*",
                     contentPadding: new EdgeInsets.symmetric(
                         vertical: MediaQuery.of(context).size.height * 0.022,
@@ -199,7 +202,10 @@ class _ClientNewState extends State<ClientNew> {
               Padding(
                   padding: EdgeInsets.all(8.0),
                   child: OutlinedButton.icon(
-                    icon: Icon(Icons.save),
+                    icon: Icon(
+                      Icons.save,
+                      color: Colors.green[700],
+                    ),
                     label: Text("Enregistrer"),
                     onPressed: () {
                       // AjouterClient();
