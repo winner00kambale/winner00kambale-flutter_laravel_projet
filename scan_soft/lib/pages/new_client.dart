@@ -99,7 +99,10 @@ class _ClientNewState extends State<ClientNew> {
               ),
               Padding(
                 padding: EdgeInsets.all(2.0),
-                child: DropdownButton<String>(
+                child: DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                   items: items.map(buildMenuItem).toList(),
                   hint: Text("Selectionner le genre"),
                   isExpanded: true,
@@ -124,13 +127,17 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 8.0, top: 2.0, bottom: 2.0),
+                padding: EdgeInsets.only(left: 30, top: 2, bottom: 2),
                 child: DropdownButton<String>(
                   items: items2.map(buildMenuItem2).toList(),
                   hint: Text("Selectionner etat civil"),
                   isExpanded: true,
                   value: value2,
                   onChanged: (value2) => setState(() => this.value2 = value2),
+                  icon: Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: Icon(Icons.arrow_circle_down_sharp),
+                  ),
                 ),
               ),
               Padding(
