@@ -124,9 +124,9 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 4.0, top: 2.0, bottom: 2.0),
+                padding: EdgeInsets.only(left: 8.0, top: 2.0, bottom: 2.0),
                 child: DropdownButton<String>(
-                  items: items.map(buildMenuItem2).toList(),
+                  items: items2.map(buildMenuItem2).toList(),
                   hint: Text("Selectionner etat civil"),
                   isExpanded: true,
                   value: value2,
@@ -264,10 +264,10 @@ DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
         style: TextStyle(fontSize: 20),
       ),
     );
-DropdownMenuItem<String> buildMenuItem2(String item2) => DropdownMenuItem(
-      value: item2,
+DropdownMenuItem<String> buildMenuItem2(String items2) => DropdownMenuItem(
+      value: items2,
       child: Text(
-        item2,
+        items2,
         style: TextStyle(fontSize: 20),
       ),
     );
