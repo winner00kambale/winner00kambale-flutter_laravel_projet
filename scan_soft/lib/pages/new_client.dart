@@ -39,6 +39,12 @@ class _ClientNewState extends State<ClientNew> {
     });
   }
 
+  final items = ['Masculin', 'Feminin'];
+  String? value;
+
+  final items2 = ['Celibataire', 'Marie(e)', 'Divorce'];
+  String? value2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,6 +97,16 @@ class _ClientNewState extends State<ClientNew> {
               ),
               Padding(
                 padding: EdgeInsets.all(2.0),
+                child: DropdownButton<String>(
+                  items: items.map(buildMenuItem).toList(),
+                  hint: Text("Selectionner le genre"),
+                  isExpanded: true,
+                  value: value,
+                  onChanged: (value) => setState(() => this.value = value),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(2.0),
                 child: TextField(
                   controller: profession,
                   decoration: InputDecoration(
@@ -103,6 +119,16 @@ class _ClientNewState extends State<ClientNew> {
                     border: new OutlineInputBorder(
                         borderRadius: new BorderRadius.circular(20.0)),
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(2.0),
+                child: DropdownButton<String>(
+                  items: items.map(buildMenuItem).toList(),
+                  hint: Text("Selectionner etat civil"),
+                  isExpanded: true,
+                  value: value2,
+                  onChanged: (value) => setState(() => this.value2 = value),
                 ),
               ),
               Padding(
@@ -228,3 +254,11 @@ class _ClientNewState extends State<ClientNew> {
     );
   }
 }
+
+DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+      value: item,
+      child: Text(
+        item,
+        style: TextStyle(fontSize: 20),
+      ),
+    );
