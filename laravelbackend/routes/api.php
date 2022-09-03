@@ -11,7 +11,7 @@ Route::get('/clients/{id}',[ClientController::class, 'editClient']);
 
 //proprietaire
 Route::get('/proprietaire', [ProprietaireController::class, 'index']);
-Route::post('/proprietaire/save', [ProprietaireController::class, 'storeProprietaire']);
+Route::post('/proprietaireSave', [ProprietaireController::class, 'storeProprietaire']);
 
 //chaffeur
 Route::get('/chaffeurAll', [ChauffeurController::class, 'index']);

@@ -17,7 +17,7 @@ class _ProprietaireState extends State<Proprietaire> {
       adresse = new TextEditingController();
 
   void AjouterProprietaire() {
-    String url = "http://127.0.0.1:8000/api/proprietaire/save";
+    String url = "http://127.0.0.1:8000/api/proprietaireSave";
     // String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
     http.post(Uri.parse(url), body: {
       "nom": nom.text,
@@ -62,7 +62,8 @@ class _ProprietaireState extends State<Proprietaire> {
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding:
+                    EdgeInsets.only(top: 10, left: 2.0, right: 2.0, bottom: 4),
                 child: TextField(
                   controller: nom,
                   decoration: InputDecoration(
@@ -79,7 +80,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 4.0, top: 2.0, bottom: 2.0),
+                padding: EdgeInsets.only(left: 2.0, right: 2.0, bottom: 4),
                 child: TextField(
                   controller: postnom,
                   decoration: InputDecoration(
@@ -112,7 +113,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: EdgeInsets.only(left: 2.0, right: 2.0, bottom: 4),
                 child: TextFormField(
                   onSaved: (value) {
                     if (value!.isEmpty) {
