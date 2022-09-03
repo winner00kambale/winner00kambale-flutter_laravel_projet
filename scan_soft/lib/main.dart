@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scan_soft/pages/chauffeur.dart';
 import 'package:scan_soft/pages/clients.dart';
 import 'package:scan_soft/pages/dashbord.dart';
 import 'package:scan_soft/pages/notes.dart';
@@ -39,8 +40,8 @@ class _HomePageState extends State<HomePage> {
       container = ClientPage();
     } else if (currentPage == DrawerSections.proprietaires) {
       container = PriprietairePage();
-    } else if (currentPage == DrawerSections.notes) {
-      container = NotesPage();
+    } else if (currentPage == DrawerSections.chauffeurs) {
+      container = ChauffeurPage();
     }
     return Scaffold(
       appBar: AppBar(
@@ -81,8 +82,8 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.clients ? true : false),
           menuItem(3, "Proprietaires", Icons.people,
               currentPage == DrawerSections.proprietaires ? true : false),
-          menuItem(4, "Notes", Icons.notes,
-              currentPage == DrawerSections.notes ? true : false),
+          menuItem(4, "Chauffeurs", Icons.people,
+              currentPage == DrawerSections.chauffeurs ? true : false),
           menuItem(5, "Setting", Icons.settings_outlined,
               currentPage == DrawerSections.settings ? true : false),
           menuItem(6, "Notifications", Icons.notifications_outlined,
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
             } else if (id == 3) {
               currentPage = DrawerSections.proprietaires;
             } else if (id == 4) {
-              currentPage = DrawerSections.notes;
+              currentPage = DrawerSections.chauffeurs;
             } else if (id == 5) {
               currentPage = DrawerSections.settings;
             } else if (id == 6) {
@@ -155,7 +156,7 @@ enum DrawerSections {
   dashboard,
   clients,
   proprietaires,
-  notes,
+  chauffeurs,
   settings,
   notifications,
   privacy_policy,

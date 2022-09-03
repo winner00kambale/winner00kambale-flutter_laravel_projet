@@ -63,7 +63,7 @@ class _ProprietaireState extends State<Proprietaire> {
               ),
               Padding(
                 padding:
-                    EdgeInsets.only(top: 10, left: 2.0, right: 2.0, bottom: 4),
+                    EdgeInsets.only(top: 20, left: 2.0, right: 2.0, bottom: 4),
                 child: TextField(
                   controller: nom,
                   decoration: InputDecoration(
@@ -80,7 +80,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 2.0, right: 2.0, bottom: 4),
+                padding: EdgeInsets.all(4.0),
                 child: TextField(
                   controller: postnom,
                   decoration: InputDecoration(
@@ -96,7 +96,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(4.0),
                 child: TextField(
                   controller: telephone,
                   decoration: InputDecoration(
@@ -113,7 +113,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 2.0, right: 2.0, bottom: 4),
+                padding: EdgeInsets.all(4.0),
                 child: TextFormField(
                   onSaved: (value) {
                     if (value!.isEmpty) {
@@ -140,7 +140,7 @@ class _ProprietaireState extends State<Proprietaire> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(4.0),
                 child: TextField(
                   controller: adresse,
                   decoration: InputDecoration(

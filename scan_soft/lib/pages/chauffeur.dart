@@ -65,7 +65,7 @@ class ItemList extends StatelessWidget {
               child: new ListTile(
                 title: new Text(list?[i]['noms']),
                 leading: new Icon(Icons.person),
-                subtitle: new Text("Tel : ${list?[i]['contact']}"),
+                subtitle: new Text("EMail : ${list?[i]['mail']}"),
                 trailing: GestureDetector(
                   onTap: () {},
                   // onTap: () {
