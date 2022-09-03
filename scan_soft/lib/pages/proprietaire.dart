@@ -1,19 +1,19 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:scan_soft/pages/new_client.dart';
 import 'package:http/http.dart' as http;
+import 'package:scan_soft/pages/new_proprietaire.dart';
 
-class ClientPage extends StatefulWidget {
-  const ClientPage({Key? key}) : super(key: key);
+class PriprietairePage extends StatefulWidget {
+  const PriprietairePage({Key? key}) : super(key: key);
 
   @override
-  State<ClientPage> createState() => _ClientPageState();
+  State<PriprietairePage> createState() => _PriprietairePageState();
 }
 
-class _ClientPageState extends State<ClientPage> {
-  Future<List> getClients() async {
-    var url = "http://127.0.0.1:8000/api/clientsAll";
+class _PriprietairePageState extends State<PriprietairePage> {
+  Future<List> getProprietaire() async {
+    var url = "http://127.0.0.1:8000/api/proprietaire";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
@@ -25,19 +25,19 @@ class _ClientPageState extends State<ClientPage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => ClientNew(),
+              builder: (context) => Proprietaire(),
             ),
           );
         },
         backgroundColor: Colors.green[700],
-        tooltip: 'Nouveau Client',
+        tooltip: 'Nouveau Proprietaire',
         child: Icon(
           Icons.add,
           color: Colors.white,
         ),
       ),
       body: new FutureBuilder<List>(
-          future: getClients(),
+          future: getProprietaire(),
           builder: (context, snapshot) {
             if (snapshot.hasError) print(snapshot.error);
             return snapshot.hasData
@@ -63,9 +63,9 @@ class ItemList extends StatelessWidget {
           child: new GestureDetector(
             child: new Card(
               child: new ListTile(
-                title: new Text(list?[i]['noms']),
+                title: new Text(list?[i]['postnom']),
                 leading: new Icon(Icons.person),
-                subtitle: new Text("Tel : ${list?[i]['contact']}"),
+                subtitle: new Text("Tel : ${list?[i]['telephone']}"),
                 trailing: GestureDetector(
                   onTap: () {},
                   // onTap: () {
@@ -82,26 +82,6 @@ class ItemList extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class Ajouter extends StatefulWidget {
-  const Ajouter({Key? key}) : super(key: key);
-
-  @override
-  State<Ajouter> createState() => _AjouterState();
-}
-
-class _AjouterState extends State<Ajouter> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: new RaisedButton(
-        child: new Text("Modifier"),
-        color: Colors.green,
-        onPressed: () {},
-      ),
     );
   }
 }

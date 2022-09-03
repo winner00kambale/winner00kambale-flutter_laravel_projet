@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scan_soft/pages/clients.dart';
 import 'package:scan_soft/pages/dashbord.dart';
-import 'package:scan_soft/pages/events.dart';
 import 'package:scan_soft/pages/notes.dart';
+import 'package:scan_soft/pages/proprietaire.dart';
 
 import 'my_drawer_header.dart';
 
@@ -37,8 +37,8 @@ class _HomePageState extends State<HomePage> {
       container = DashboardPage();
     } else if (currentPage == DrawerSections.clients) {
       container = ClientPage();
-    } else if (currentPage == DrawerSections.events) {
-      container = EventsPage();
+    } else if (currentPage == DrawerSections.proprietaires) {
+      container = PriprietairePage();
     } else if (currentPage == DrawerSections.notes) {
       container = NotesPage();
     }
@@ -79,8 +79,8 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.dashboard ? true : false),
           menuItem(2, "Clients", Icons.people_alt_outlined,
               currentPage == DrawerSections.clients ? true : false),
-          menuItem(3, "Events", Icons.event,
-              currentPage == DrawerSections.events ? true : false),
+          menuItem(3, "Proprietaires", Icons.people,
+              currentPage == DrawerSections.proprietaires ? true : false),
           menuItem(4, "Notes", Icons.notes,
               currentPage == DrawerSections.notes ? true : false),
           menuItem(5, "Setting", Icons.settings_outlined,
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
             } else if (id == 2) {
               currentPage = DrawerSections.clients;
             } else if (id == 3) {
-              currentPage = DrawerSections.events;
+              currentPage = DrawerSections.proprietaires;
             } else if (id == 4) {
               currentPage = DrawerSections.notes;
             } else if (id == 5) {
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
 enum DrawerSections {
   dashboard,
   clients,
-  events,
+  proprietaires,
   notes,
   settings,
   notifications,
