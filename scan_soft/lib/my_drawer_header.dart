@@ -11,6 +11,12 @@ class _MyDrawerHaederState extends State<MyHeaderDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //   image: AssetImage('assets/images/logo.png'),
+      //   fit: BoxFit.cover,
+      //   colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+      // )),
       color: Colors.green[700],
       width: double.infinity,
       height: 200,

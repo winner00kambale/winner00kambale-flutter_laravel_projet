@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:scan_soft/pages/clients.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ClientNew extends StatefulWidget {
   const ClientNew({Key? key}) : super(key: key);
@@ -268,6 +269,7 @@ class _ClientNewState extends State<ClientNew> {
                     label: Text("Enregistrer"),
                     onPressed: () {
                       AjouterClient();
+                      showmessage();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -287,6 +289,14 @@ class _ClientNewState extends State<ClientNew> {
     );
   }
 }
+
+void showmessage() => Fluttertoast.showToast(
+      msg: "Insertion avec succes",
+      fontSize: 50,
+      gravity: ToastGravity.TOP,
+      backgroundColor: Colors.green[700],
+      textColor: Colors.white,
+    );
 
 DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,

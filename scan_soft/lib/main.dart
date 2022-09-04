@@ -1,8 +1,10 @@
+//@dart=2.9;
 import 'package:flutter/material.dart';
 import 'package:scan_soft/pages/chauffeur.dart';
 import 'package:scan_soft/pages/clients.dart';
 import 'package:scan_soft/pages/dashbord.dart';
-import 'package:scan_soft/pages/notes.dart';
+import 'package:scan_soft/pages/login_page.dart';
+import 'package:scan_soft/pages/paramettre_prix.dart';
 import 'package:scan_soft/pages/proprietaire.dart';
 
 import 'my_drawer_header.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
@@ -42,6 +44,8 @@ class _HomePageState extends State<HomePage> {
       container = PriprietairePage();
     } else if (currentPage == DrawerSections.chauffeurs) {
       container = ChauffeurPage();
+    } else if (currentPage == DrawerSections.settings) {
+      container = ParemettrePage();
     }
     return Scaffold(
       appBar: AppBar(
@@ -84,7 +88,7 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.proprietaires ? true : false),
           menuItem(4, "Chauffeurs", Icons.people,
               currentPage == DrawerSections.chauffeurs ? true : false),
-          menuItem(5, "Setting", Icons.settings_outlined,
+          menuItem(5, "Setting Price", Icons.settings_outlined,
               currentPage == DrawerSections.settings ? true : false),
           menuItem(6, "Notifications", Icons.notifications_outlined,
               currentPage == DrawerSections.notifications ? true : false),
