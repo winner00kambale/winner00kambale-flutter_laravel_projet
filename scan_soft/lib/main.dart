@@ -4,6 +4,8 @@ import 'package:scan_soft/pages/chauffeur.dart';
 import 'package:scan_soft/pages/clients.dart';
 import 'package:scan_soft/pages/dashbord.dart';
 import 'package:scan_soft/pages/login_page.dart';
+// import 'package:scan_soft/pages/login_page.dart';
+import 'package:scan_soft/pages/login_screem.dart';
 import 'package:scan_soft/pages/paramettre_prix.dart';
 import 'package:scan_soft/pages/proprietaire.dart';
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // home: LoginScreem(),
       home: LoginPage(),
     );
   }

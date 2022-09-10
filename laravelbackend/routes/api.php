@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{PayementController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController,ParameterPriceController};
+use App\Http\Controllers\{UserController,PayementController,ProprietaireController,StudentController,ClientController,CategorieController,ChauffeurController,ChargementCompteController,ParameterPriceController};
 
 //Client
 Route::post('/clients', [ClientController::class ,'storeClient']);
@@ -28,9 +28,10 @@ Route::post('/payementSave', [PayementController::class, 'store']);
 //Paramettre
 Route::get('/PrixUnit', [ParameterPriceController::class, 'index']);
 
-
-
-
+//Auth
+// Route::post('/userLogin', [UserController::class, 'login']);
+Route::post('/userSave', [UserController::class, 'store']);
+Route::post('/loginuser', [UserController::class, 'login']);
 
 
 
