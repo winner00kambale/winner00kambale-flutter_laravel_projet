@@ -4,10 +4,9 @@ import 'package:scan_soft/pages/chauffeur.dart';
 import 'package:scan_soft/pages/clients.dart';
 import 'package:scan_soft/pages/dashbord.dart';
 import 'package:scan_soft/pages/login_page.dart';
-// import 'package:scan_soft/pages/login_page.dart';
-import 'package:scan_soft/pages/login_screem.dart';
 import 'package:scan_soft/pages/paramettre_prix.dart';
 import 'package:scan_soft/pages/proprietaire.dart';
+import 'package:scan_soft/scanQr/scanQr.dart';
 
 import 'my_drawer_header.dart';
 
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: LoginScreem(),
       home: LoginPage(),
     );
   }
@@ -49,6 +47,8 @@ class _HomePageState extends State<HomePage> {
       container = ChauffeurPage();
     } else if (currentPage == DrawerSections.settings) {
       container = ParemettrePage();
+    } else if (currentPage == DrawerSections.chargement) {
+      container = ScanSreen();
     }
     return Scaffold(
       appBar: AppBar(
@@ -91,11 +91,11 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.proprietaires ? true : false),
           menuItem(4, "Chauffeurs", Icons.people,
               currentPage == DrawerSections.chauffeurs ? true : false),
-          menuItem(5, "Setting Price", Icons.settings_outlined,
+          menuItem(5, "Chargement Compte", Icons.money,
+              currentPage == DrawerSections.chargement ? true : false),
+          menuItem(6, "Setting Price", Icons.settings_outlined,
               currentPage == DrawerSections.settings ? true : false),
-          menuItem(6, "Notifications", Icons.notifications_outlined,
-              currentPage == DrawerSections.notifications ? true : false),
-          menuItem(7, "Privacy policy", Icons.privacy_tip_outlined,
+          menuItem(7, "Chargement Compte", Icons.privacy_tip_outlined,
               currentPage == DrawerSections.privacy_policy ? true : false),
           menuItem(8, "Send feedback", Icons.feedback_outlined,
               currentPage == DrawerSections.send_feedback ? true : false),
@@ -120,9 +120,9 @@ class _HomePageState extends State<HomePage> {
             } else if (id == 4) {
               currentPage = DrawerSections.chauffeurs;
             } else if (id == 5) {
-              currentPage = DrawerSections.settings;
+              currentPage = DrawerSections.chargement;
             } else if (id == 6) {
-              currentPage = DrawerSections.notifications;
+              currentPage = DrawerSections.settings;
             } else if (id == 7) {
               currentPage = DrawerSections.privacy_policy;
             } else if (id == 8) {
@@ -165,7 +165,7 @@ enum DrawerSections {
   proprietaires,
   chauffeurs,
   settings,
-  notifications,
+  chargement,
   privacy_policy,
   send_feedback,
 }

@@ -67,11 +67,15 @@ class ItemList extends StatelessWidget {
                 leading: new Icon(Icons.person),
                 subtitle: new Text("Tel : ${list?[i]['contact']}"),
                 trailing: GestureDetector(
-                  onTap: () {},
-                  // onTap: () {
-
-                  //   debugPrint("edit");
-                  // },
+                  onTap: () {
+                    // setS(() {
+                    //   var url = "";
+                    //   http.post(Uri.parse(url), body: {
+                    //     'id': list![i]['id'],
+                    //   });
+                    // });
+                    debugPrint("delete");
+                  },
                   child: Icon(
                     Icons.delete,
                     color: Colors.grey,

@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   static String _password = '';
 
   Future login() async {
-    var url = "http://172.20.10.4:82/transpaie_php/login.php";
+    var url = "http://192.168.0.109:82/transpaie_php/login.php";
     if (_email.isNotEmpty && _password.isNotEmpty) {
       var data = {"email": _email, "password": _password};
       var response = await http.post(Uri.parse(url), body: data);
@@ -35,43 +35,12 @@ class _LoginPageState extends State<LoginPage> {
 
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => HomePage()));
-          //print(jsonDecode(response.body));
         }
       }
     } else {
       errorSnakeBar(context, 'Tous les champs sont obligatoires');
     }
   }
-
-  // loginPressed() async {
-  //   if (_email.isNotEmpty && _password.isNotEmpty) {
-  //     http.Response response = await AuthService.Login(_email, _password);
-  //     Map responseMap = jsonDecode(response.body);
-  //     errorSnakeBar(context, 'Verifier votre email et password');
-  //     if (response.statusCode == 200) {
-  //       // errorSnakeBar(context, 'Verifier votre email et password');
-  //       Navigator.push(
-  //           context,
-  //           MaterialPageRoute(
-  //             builder: (BuildContext context) => const HomePage(),
-  //           ));
-  //     } else {
-  //       errorSnakeBar(context, responseMap.values.first);
-  //       // errorSnakeBar(context, 'Verifier votre email et password');
-  //     }
-  //   } else {
-  //     errorSnakeBar(context, 'Tous les champs sont obligatoires');
-  //     Navigator.push(
-  //         context,
-  //         MaterialPageRoute(
-  //           builder: (BuildContext context) => const HomePage(),
-  //         ));
-  //   }
-  // }
-
-  // TextEditingController login = TextEditingController(),
-  //     email = new TextEditingController(),
-  //     password = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -124,9 +93,6 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               height: 60,
                             ),
-                            // RoundedButton(
-                            //   buttontext: 'Login',
-                            // ),
                             Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
@@ -144,7 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                             ),
-
                             SizedBox(
                               height: 60,
                             ),
@@ -198,7 +163,7 @@ class TextInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue[200]!.withOpacity(0.5),
+          color: Colors.white.withOpacity(0.5),
           borderRadius: BorderRadius.circular(16),
         ),
         child: TextField(
@@ -247,7 +212,7 @@ class PasswordInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue[200]!.withOpacity(0.5),
+          color: Colors.white.withOpacity(0.5),
           borderRadius: BorderRadius.circular(16),
         ),
         child: TextField(
@@ -271,34 +236,6 @@ class PasswordInput extends StatelessWidget {
           obscureText: true,
           style: kBodyText,
           textInputAction: inputAction,
-        ),
-      ),
-    );
-  }
-}
-
-class RoundedButton extends StatelessWidget {
-  const RoundedButton({
-    Key? key,
-    required this.buttontext,
-  }) : super(key: key);
-
-  final String buttontext;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-          color: Colors.blue[300], borderRadius: BorderRadius.circular(16)),
-      child: FlatButton(
-        onPressed: () {},
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: Text(
-            buttontext,
-            style: kBodyText,
-          ),
         ),
       ),
     );
