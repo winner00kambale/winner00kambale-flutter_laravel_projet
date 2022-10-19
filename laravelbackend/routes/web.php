@@ -39,3 +39,7 @@ Route::get('/generateCard/{id}', [ClientController::class, 'generateCard'])->nam
 //Paramettre prix
 Route::get('/Price', [ParameterPriceController::class, 'GetPrice'])->name('paramettrePrice');
 Route::post('/updatePrice', [ParameterPriceController::class, 'store'])->name('Price.price');
+
+//rapport 
+Route::post('/rapport/show',[ClientController::class, 'rapport'])->name('rapport.show');
+Route::get('/detail/{nom}', [ClientController::class, 'detail'])->name('detail');

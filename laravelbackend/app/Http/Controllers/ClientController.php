@@ -72,6 +72,24 @@ class ClientController extends Controller
         $qrcode = QrCode::size(80)->generate($data->id);
          return view('pages.qrcode',compact('qrcode','data')); 
      }
+     public function detail($client){
+        $data = \DB::select("SELECT * FROM affpayement WHERE noms='$client'");
+        $data1 = \DB::select("SELECT id,noms,contact FROM `clients` WHERE noms='$client'");
+        $montant = \DB::select("SELECT SUM(montant) AS total,curdate() AS date_ FROM `affpayement` WHERE noms='$client'");
+        return view('rapport.detail',compact('data','data1','montant'));
+     }
+
+     public function rapport(Request $request){
+        $request->validate([
+            'date1' => 'required',
+            'date2' => 'required'
+        ]);
+        $date1 = $request->input('date1');
+        $date2 = $request->input('date2');
+        $total = \DB::select("SELECT SUM(montant) total,date_payement,curdate() date_ FROM `affpayement` WHERE date_payement BETWEEN '$date1' AND '$date2'");
+        $data = \DB::select("SELECT * FROM `affpayement` WHERE date_payement BETWEEN '$date1' AND '$date2'"); 
+        return view('rapport.rapport',compact('data','total'));
+     }
 
      //API
      public function index(){
