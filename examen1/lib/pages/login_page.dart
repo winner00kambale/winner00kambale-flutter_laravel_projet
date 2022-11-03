@@ -1,11 +1,11 @@
 import 'dart:convert';
 
+import 'package:examen1/main.dart';
 import 'package:flutter/material.dart';
 //import 'package:scan_soft/main.dart';
-import 'package:scan_soft/main.dart';
-import 'package:scan_soft/pages/pallete.dart';
+import 'package:examen1/pages/pallete.dart';
 // import 'package:scan_soft/services/auth_service.dart';
-import 'package:scan_soft/services/globals.dart';
+import 'package:examen1/services/globals.dart';
 import '../widgets/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   static String _password = '';
 
   Future login() async {
-    var url = "http://192.168.137.133:82/transpaie_php/login.php";
+    var url = "http://172.20.10.4:82/transpaie_php/login.php";
     if (_email.isNotEmpty && _password.isNotEmpty) {
       var data = {"email": _email, "password": _password};
       var response = await http.post(Uri.parse(url), body: data);

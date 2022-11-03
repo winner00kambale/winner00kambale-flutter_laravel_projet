@@ -58,8 +58,8 @@ class ChauffeurController extends Controller
             $customer->type_piece = $request->input('type_piece');
             $customer->numero_piece = $request->input('numero_piece');
             $customer->adresse = $request->input('adresse');
-            $customer->mail = $request->input('contact');
-            $customer->contact = $request->input('mail');
+            $customer->mail = $request->input('mail'); 
+            $customer->contact = $request->input('contact');
             $customer->save();           
      }
 

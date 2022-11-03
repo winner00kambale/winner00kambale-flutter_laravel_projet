@@ -1,11 +1,12 @@
 // @dart=2.9
+import 'package:examen1/scanQr/payement.dart';
 import 'package:flutter/material.dart';
-import 'package:scan_soft/pages/chauffeur.dart';
-import 'package:scan_soft/pages/clients.dart';
-import 'package:scan_soft/pages/dashbord.dart';
-import 'package:scan_soft/pages/login_page.dart';
-import 'package:scan_soft/pages/paramettre_prix.dart';
-import 'package:scan_soft/pages/proprietaire.dart';
+import 'package:examen1/pages/chauffeur.dart';
+import 'package:examen1/pages/clients.dart';
+import 'package:examen1/pages/dashbord.dart';
+import 'package:examen1/pages/login_page.dart';
+import 'package:examen1/pages/paramettre_prix.dart';
+import 'package:examen1/pages/proprietaire.dart';
 import 'my_drawer_header.dart';
 
 void main() {
@@ -45,8 +46,10 @@ class _HomePageState extends State<HomePage> {
       container = ChauffeurPage();
     } else if (currentPage == DrawerSections.settings) {
       container = ParemettrePage();
+    } else if (currentPage == DrawerSections.payement) {
+      container = Payement();
     } else if (currentPage == DrawerSections.chargement) {
-      //container = ScanSreen();
+      container = Payement();
     }
     return Scaffold(
       appBar: AppBar(
@@ -93,9 +96,9 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.chargement ? true : false),
           menuItem(6, "Setting Price", Icons.settings_outlined,
               currentPage == DrawerSections.settings ? true : false),
-          menuItem(7, "Chargement Compte", Icons.privacy_tip_outlined,
-              currentPage == DrawerSections.privacy_policy ? true : false),
-          menuItem(8, "Send feedback", Icons.feedback_outlined,
+          menuItem(7, "Payement transport", Icons.privacy_tip_outlined,
+              currentPage == DrawerSections.payement ? true : false),
+          menuItem(8, "Send feedback", Icons.money,
               currentPage == DrawerSections.send_feedback ? true : false),
         ],
       ),
@@ -122,7 +125,7 @@ class _HomePageState extends State<HomePage> {
             } else if (id == 6) {
               currentPage = DrawerSections.settings;
             } else if (id == 7) {
-              currentPage = DrawerSections.privacy_policy;
+              currentPage = DrawerSections.payement;
             } else if (id == 8) {
               currentPage = DrawerSections.send_feedback;
             }
@@ -164,6 +167,6 @@ enum DrawerSections {
   chauffeurs,
   settings,
   chargement,
-  privacy_policy,
+  payement,
   send_feedback,
 }
