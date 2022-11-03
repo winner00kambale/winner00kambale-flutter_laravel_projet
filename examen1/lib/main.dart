@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:examen1/scanQr/chargementcompte.dart';
 import 'package:examen1/scanQr/payement.dart';
 import 'package:flutter/material.dart';
 import 'package:examen1/pages/chauffeur.dart';
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
     } else if (currentPage == DrawerSections.payement) {
       container = Payement();
     } else if (currentPage == DrawerSections.chargement) {
-      container = Payement();
+      container = Chargement();
     }
     return Scaffold(
       appBar: AppBar(
