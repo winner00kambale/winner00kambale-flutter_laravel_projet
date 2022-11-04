@@ -57,7 +57,7 @@ class _ChargementState extends State<Chargement> {
               padding: const EdgeInsets.all(25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: 'Nombre de places',
+                  labelText: 'Montant (Fc)',
                 ),
               ),
             ),

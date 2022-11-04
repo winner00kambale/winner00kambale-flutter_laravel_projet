@@ -25,8 +25,8 @@ class _ClientNewState extends State<ClientNew> {
       mail = new TextEditingController();
 
   void AjouterClient() {
-    String url = "http://127.0.0.1:8000/api/clients";
-    // String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
+    //String url = "http://127.0.0.1:8000/api/clients";
+    String url = "http://172.20.10.4:82/transpaie_php/insertClient.php";
     http.post(Uri.parse(url), body: {
       "noms": noms.text,
       "genre": value,

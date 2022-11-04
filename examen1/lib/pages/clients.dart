@@ -13,7 +13,8 @@ class ClientPage extends StatefulWidget {
 
 class _ClientPageState extends State<ClientPage> {
   Future<List> getClients() async {
-    var url = "http://127.0.0.1:8000/api/clientsAll";
+    //var url = "http://127.0.0.1:8000/api/clientsAll";
+    var url = "http://172.20.10.4:82/transpaie_php/GetClientAll.php";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
