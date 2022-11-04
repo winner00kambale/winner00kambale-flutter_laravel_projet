@@ -17,8 +17,8 @@ class _ProprietaireState extends State<Proprietaire> {
       adresse = new TextEditingController();
 
   void AjouterProprietaire() {
-    String url = "http://127.0.0.1:8000/api/proprietaireSave";
-    // String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
+    //String url = "http://127.0.0.1:8000/api/proprietaireSave";
+    String url = "http://172.20.10.4:82/transpaie_php/insertProprietaire.php";
     http.post(Uri.parse(url), body: {
       "nom": nom.text,
       "postnom": postnom.text,

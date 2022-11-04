@@ -44,6 +44,7 @@ class _ChargementState extends State<Chargement> {
         // appBar: AppBar(
         //   title: const Text('Scan-Soft Barcode Scanner'),
         // ),
+
         body: ListView(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,

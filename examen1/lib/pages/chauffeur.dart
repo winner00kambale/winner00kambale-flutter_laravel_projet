@@ -13,7 +13,8 @@ class ChauffeurPage extends StatefulWidget {
 
 class _ChauffeurPageState extends State<ChauffeurPage> {
   Future<List> getChauffeur() async {
-    var url = "http://127.0.0.1:8000/api/chaffeurAll";
+    //var url = "http://127.0.0.1:8000/api/chaffeurAll";
+    var url = "http://172.20.10.4:82/transpaie_php/GetChauffeurAll.php";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
@@ -65,7 +66,8 @@ class ItemList extends StatelessWidget {
               child: new ListTile(
                 title: new Text(list?[i]['noms']),
                 leading: new Icon(Icons.person),
-                subtitle: new Text("EMail : ${list?[i]['mail']}"),
+                subtitle: new Text(
+                    "EMail / Telephone : ${list?[i]['mail']} / ${list?[i]['contact']}"),
                 trailing: GestureDetector(
                   onTap: () {},
                   // onTap: () {

@@ -19,8 +19,8 @@ class _ChauffeurState extends State<Chauffeur> {
       mail = new TextEditingController();
 
   void AjouterChauffeur() {
-    String url = "http://127.0.0.1:8000/api/chauffeur";
-    // String ulr2 = "http://172.20.10.4:82/transpaie_php/insertClient.php";
+    //String url = "http://127.0.0.1:8000/api/chauffeur";
+    String url = "http://172.20.10.4:82/transpaie_php/insertChauffeur.php";
     http.post(Uri.parse(url), body: {
       "noms": noms.text,
       "genre": value,

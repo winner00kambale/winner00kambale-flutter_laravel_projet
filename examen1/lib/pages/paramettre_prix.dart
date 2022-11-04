@@ -12,7 +12,8 @@ class ParemettrePage extends StatefulWidget {
 
 class _ParemettrePageState extends State<ParemettrePage> {
   Future<List> getPrix() async {
-    var url = "http://127.0.0.1:8000/api/PrixUnit";
+    //var url = "http://127.0.0.1:8000/api/PrixUnit";
+    var url = "http://172.20.10.4:82/transpaie_php/GetPrix.php";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
