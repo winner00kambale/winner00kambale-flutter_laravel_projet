@@ -60,7 +60,7 @@ class ItemList extends StatelessWidget {
       itemCount: list == null ? 0 : list?.length,
       itemBuilder: (context, i) {
         return new Container(
-          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 25),
+          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 25),
           child: new GestureDetector(
             child: new Card(
               child: new ListTile(

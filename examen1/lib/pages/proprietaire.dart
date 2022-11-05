@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -177,6 +178,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                 onPressed: () {
                   AjouterProprietaire();
                   submit();
+                  errorSnakeBar(context, 'Propriétaire Enregistré avec succes');
                 },
               )
             ],
@@ -195,7 +197,7 @@ class ItemList extends StatelessWidget {
       itemCount: list == null ? 0 : list?.length,
       itemBuilder: (context, i) {
         return new Container(
-          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 26),
           child: new GestureDetector(
             child: new Card(
               child: new ListTile(
