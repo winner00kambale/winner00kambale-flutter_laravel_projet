@@ -15,7 +15,7 @@ class PriprietairePage extends StatefulWidget {
 class _PriprietairePageState extends State<PriprietairePage> {
   Future<List> getProprietaire() async {
     // var url = "http://127.0.0.1:8000/api/proprietaire";
-    var url = "http://localhost:82/transpaie_php/GetProprietaireAll.php";
+    var url = "http://172.20.10.4:82/transpaie_php/GetProprietaireAll.php";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
@@ -202,7 +202,7 @@ class ItemList extends StatelessWidget {
                 title: new Text(list?[i]['mail']),
                 leading: new Icon(Icons.person),
                 subtitle: new Text(
-                    "Noms / Tel : ${list?[i]['nom']} / ${list?[i]['postnom']} / ${list?[i]['telephone']}"),
+                    "Noms / Tel : ${list?[i]['nom']} ${list?[i]['postnom']} / ${list?[i]['telephone']}"),
                 trailing: GestureDetector(
                   onTap: () {},
                   // onTap: () {

@@ -13,7 +13,7 @@ class ParemettrePage extends StatefulWidget {
 class _ParemettrePageState extends State<ParemettrePage> {
   Future<List> getPrix() async {
     //var url = "http://127.0.0.1:8000/api/PrixUnit";
-    var url = "http://172.20.10.4:82/transpaie_php/GetPrix.php";
+    var url = "http://172.20.10.4:82/transpaie_php/GetPrixAll.php";
     final response = await http.get(Uri.parse(url));
     return json.decode(response.body);
   }
@@ -46,12 +46,12 @@ class ItemList extends StatelessWidget {
       itemBuilder: (context, i) {
         return new Container(
           // padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          padding: EdgeInsets.all(100),
+          padding: EdgeInsets.only(top: 150),
           child: new GestureDetector(
             // child: new Card(
             child: new ListTile(
               title: new Text(
-                'Place ',
+                '1 Place ',
                 style: TextStyle(fontSize: 25),
               ),
               leading: new Icon(

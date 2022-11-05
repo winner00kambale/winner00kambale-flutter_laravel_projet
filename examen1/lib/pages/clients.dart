@@ -60,13 +60,14 @@ class ItemList extends StatelessWidget {
       itemCount: list == null ? 0 : list?.length,
       itemBuilder: (context, i) {
         return new Container(
-          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 25),
           child: new GestureDetector(
             child: new Card(
               child: new ListTile(
                 title: new Text(list?[i]['noms']),
-                leading: new Icon(Icons.person),
-                subtitle: new Text("Tel : ${list?[i]['contact']}"),
+                //leading: new Icon(Icons.person),
+                subtitle: new Text(
+                    "Genre   &   Telephone   &   Etat-Civil : ${list?[i]['genre']} / ${list?[i]['contact']} / ${list?[i]['etatcivil']}"),
                 trailing: GestureDetector(
                   onTap: () {
                     // setS(() {
