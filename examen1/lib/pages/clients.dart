@@ -67,7 +67,7 @@ class ItemList extends StatelessWidget {
                 title: new Text(list?[i]['noms']),
                 //leading: new Icon(Icons.person),
                 subtitle: new Text(
-                    "Genre   &   Telephone   &   Etat-Civil : ${list?[i]['genre']} / ${list?[i]['contact']} / ${list?[i]['etatcivil']}"),
+                    "Genre   &   Telephone  & Montant_Ct : ${list?[i]['genre']} / ${list?[i]['contact']} / ${list?[i]['montant_compte']} Fc"),
                 trailing: GestureDetector(
                   onTap: () {
                     // setS(() {

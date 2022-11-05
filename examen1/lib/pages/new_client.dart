@@ -1,3 +1,4 @@
+import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:examen1/pages/clients.dart';
 import 'package:http/http.dart' as http;
@@ -268,11 +269,12 @@ class _ClientNewState extends State<ClientNew> {
                     label: Text("Enregistrer"),
                     onPressed: () {
                       AjouterClient();
+                      errorSnakeBar(context, 'Client Enregistré avec succes');
                       // showmessage();
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ClientPage()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => ClientPage()));
                     },
                     style: ElevatedButton.styleFrom(
                       side: BorderSide(width: 2.0, color: Colors.green),
