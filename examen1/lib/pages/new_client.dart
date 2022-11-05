@@ -1,6 +1,6 @@
 import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:examen1/pages/clients.dart';
+//import 'package:examen1/pages/clients.dart';
 import 'package:http/http.dart' as http;
 
 class ClientNew extends StatefulWidget {

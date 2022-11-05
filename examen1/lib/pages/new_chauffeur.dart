@@ -1,4 +1,6 @@
+import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
+//import 'package:examen1/pages/clients.dart';
 import 'package:http/http.dart' as http;
 
 class Chauffeur extends StatefulWidget {
@@ -9,7 +11,11 @@ class Chauffeur extends StatefulWidget {
 }
 
 class _ChauffeurState extends State<Chauffeur> {
-  TextEditingController Chauffeur = TextEditingController(),
+  void initState() {
+    super.initState();
+  }
+
+  TextEditingController chauffeur = TextEditingController(),
       noms = new TextEditingController(),
       profession = new TextEditingController(),
       typepiece = new TextEditingController(),
@@ -19,7 +25,6 @@ class _ChauffeurState extends State<Chauffeur> {
       mail = new TextEditingController();
 
   void AjouterChauffeur() {
-    //String url = "http://127.0.0.1:8000/api/chauffeur";
     String url = "http://172.20.10.4:82/transpaie_php/insertChauffeur.php";
     http.post(Uri.parse(url), body: {
       "noms": noms.text,
@@ -29,8 +34,8 @@ class _ChauffeurState extends State<Chauffeur> {
       "type_piece": typepiece.text,
       "numero_piece": numPiece.text,
       "adresse": adresse.text,
-      "mail": mail.text,
       "contact": contact.text,
+      "mail": mail.text,
     });
   }
 
@@ -39,6 +44,7 @@ class _ChauffeurState extends State<Chauffeur> {
 
   final items2 = ['Celibataire', 'Marie(e)', 'Divorce'];
   String? value2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -260,6 +266,9 @@ class _ChauffeurState extends State<Chauffeur> {
                     label: Text("Enregistrer"),
                     onPressed: () {
                       AjouterChauffeur();
+                      errorSnakeBar(
+                          context, 'Chauffeur Enregistré avec succes');
+                      // showmessage();
                       // Navigator.push(
                       //     context,
                       //     MaterialPageRoute(
