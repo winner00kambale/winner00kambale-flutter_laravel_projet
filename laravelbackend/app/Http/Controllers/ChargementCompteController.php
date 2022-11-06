@@ -14,11 +14,11 @@ class ChargementCompteController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'client_id' => 'required',
+            'noms' => 'required',
             'montant' => 'required',
         ]);
         \DB::statement("call chargementCompte(?,?)",[
-            $request->client_id,
+            $request->noms,
             $request->montant
         ]);
         return redirect()->route('compte.index')->with('message','chargement avec succes');

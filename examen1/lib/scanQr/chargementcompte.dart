@@ -2,8 +2,10 @@ import 'dart:async';
 import 'dart:io' show Platform;
 
 import 'package:barcode_scan2/barcode_scan2.dart';
+import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 class Chargement extends StatefulWidget {
   const Chargement({Key? key}) : super(key: key);
@@ -20,10 +22,22 @@ class _ChargementState extends State<Chargement> {
   var _useAutoFocus = true;
   var _autoEnableFlash = false;
 
+  TextEditingController Chargement = TextEditingController(),
+      montant = new TextEditingController();
+
   static final _possibleFormats = BarcodeFormat.values.toList()
     ..removeWhere((e) => e == BarcodeFormat.unknown);
 
   List<BarcodeFormat> selectedFormats = [..._possibleFormats];
+
+  void ChargementCompte() {
+    String url =
+        "http://172.20.10.4:82/transpaie_php/insertChargecompteClient.php";
+    http.post(Uri.parse(url), body: {
+      "noms": scanResult,
+      "montant": montant.text,
+    });
+  }
 
   @override
   void initState() {
@@ -57,6 +71,7 @@ class _ChargementState extends State<Chargement> {
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: TextField(
+                controller: montant,
                 decoration: InputDecoration(
                   labelText: 'Montant (Fc)',
                 ),
@@ -76,7 +91,10 @@ class _ChargementState extends State<Chargement> {
             Padding(
               padding: EdgeInsets.all(25.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  ChargementCompte();
+                  errorSnakeBar(context, 'Chargement efectué avec succes');
+                },
                 child: Text('Save'),
               ),
             ),

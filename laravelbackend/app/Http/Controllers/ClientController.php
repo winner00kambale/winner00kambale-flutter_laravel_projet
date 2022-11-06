@@ -69,7 +69,7 @@ class ClientController extends Controller
 
      public function generateCard($id){
         $data = Client::find($id);
-        $qrcode = QrCode::size(80)->generate($data->id);
+        $qrcode = QrCode::size(80)->generate($data->noms);
          return view('pages.qrcode',compact('qrcode','data')); 
      }
      public function detail($client){
