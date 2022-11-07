@@ -34,7 +34,7 @@ class _ChargementState extends State<Chargement> {
     String url =
         "http://172.20.10.4:82/transpaie_php/insertChargecompteClient.php";
     http.post(Uri.parse(url), body: {
-      "noms": scanResult,
+      "noms": scanResult!.rawContent,
       "montant": montant.text,
     });
   }
