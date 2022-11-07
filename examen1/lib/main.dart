@@ -1,4 +1,6 @@
 // @dart=2.9
+import 'package:examen1/pages/client2.dart';
+import 'package:examen1/pages/newclient2.dart';
 import 'package:examen1/scanQr/chargementcompte.dart';
 import 'package:examen1/scanQr/payement.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: Client2(),
+      routes: <String, WidgetBuilder>{
+        '/new_client': (BuildContext context) => new ClientNew2()
+      },
     );
   }
 }
