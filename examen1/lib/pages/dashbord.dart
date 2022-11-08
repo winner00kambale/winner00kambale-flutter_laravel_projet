@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         size: 70.0,
                         color: Colors.blue,
                       ),
-                      Text("person_add", style: new TextStyle(fontSize: 17.0)),
+                      Text("CLIENTS", style: new TextStyle(fontSize: 17.0)),
                     ],
                   ),
                 ),

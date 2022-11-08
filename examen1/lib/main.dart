@@ -1,5 +1,5 @@
 // @dart=2.9
-import 'package:examen1/pages/client2.dart';
+//import 'package:examen1/pages/client2.dart';
 import 'package:examen1/pages/newclient2.dart';
 import 'package:examen1/scanQr/chargementcompte.dart';
 import 'package:examen1/scanQr/payement.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Client2(),
+      home: LoginPage(),
       routes: <String, WidgetBuilder>{
         '/new_client': (BuildContext context) => new ClientNew2()
       },
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
     }
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[700],
+        //backgroundColor: Colors.green[700],
         title: Text(
           "Scan-Soft",
           style: TextStyle(
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget menuItem(int id, String title, IconData icon, bool selected) {
     return Material(
-      color: selected ? Colors.green[300] : Colors.transparent,
+      color: selected ? Colors.blue : Colors.transparent,
       child: InkWell(
         onTap: () {
           Navigator.pop(context);

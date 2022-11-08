@@ -52,7 +52,7 @@ class _ClientNewState extends State<ClientNew> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        backgroundColor: Colors.green[700],
+        //backgroundColor: Colors.green[700],
         toolbarHeight: 60,
         foregroundColor: Colors.white,
         title: Text(
@@ -88,7 +88,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.person,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Noms',
                     labelText: 'Noms*',
@@ -131,7 +131,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.supervised_user_circle,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Profession',
                     labelText: 'Profession*',
@@ -172,7 +172,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity_rounded,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'Type piece identite',
@@ -189,7 +189,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'numero piece identite',
@@ -206,7 +206,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.home_filled,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Adresse',
                     labelText: 'Adresse*',
@@ -222,7 +222,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.phone,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'Telephone +243 ...',
@@ -248,7 +248,7 @@ class _ClientNewState extends State<ClientNew> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.email,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     labelText: "Adresse Mail*",
                     contentPadding: new EdgeInsets.symmetric(
@@ -260,29 +260,16 @@ class _ClientNewState extends State<ClientNew> {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.only(left: 90, top: 7, right: 80),
-                  child: OutlinedButton.icon(
-                    icon: Icon(
-                      Icons.save,
-                      color: Colors.green[700],
-                    ),
-                    label: Text("Enregistrer"),
-                    onPressed: () {
-                      AjouterClient();
-                      errorSnakeBar(context, 'Client Enregistré avec succes');
-                      // showmessage();
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => ClientPage()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                      side: BorderSide(width: 2.0, color: Colors.green),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32.0),
-                      ),
-                    ),
-                  )),
+                padding: EdgeInsets.only(
+                    top: 12.0, bottom: 12.0, left: 60.0, right: 60.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    AjouterClient();
+                    errorSnakeBar(context, 'Client Enregistré avec succes');
+                  },
+                  child: Text('Enregistrer'),
+                ),
+              ),
             ],
           ),
         ),

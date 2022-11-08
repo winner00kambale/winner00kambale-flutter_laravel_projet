@@ -17,7 +17,7 @@ class _MyDrawerHaederState extends State<MyHeaderDrawer> {
       //   fit: BoxFit.cover,
       //   colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
       // )),
-      //color: Colors.green[700],
+      color: Colors.blue,
       width: double.infinity,
       height: 200,
       padding: EdgeInsets.only(top: 20.0),
