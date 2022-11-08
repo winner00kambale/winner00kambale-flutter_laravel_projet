@@ -30,7 +30,7 @@ class _ClientPageState extends State<ClientPage> {
             ),
           );
         },
-        backgroundColor: Colors.green[700],
+        //backgroundColor: Colors.green[700],
         tooltip: 'Nouveau Client',
         child: Icon(
           Icons.add,

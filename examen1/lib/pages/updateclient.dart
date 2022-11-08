@@ -1,4 +1,5 @@
 import 'package:examen1/pages/client2.dart';
+import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -56,7 +57,7 @@ class _UpdateClientState extends State<UpdateClient> {
     });
     var res = response.body;
     if (res == "true") {
-      //Navigator.pop(context);
+      // Navigator.pop(context);
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Client2()));
     } else {
@@ -73,7 +74,8 @@ class _UpdateClientState extends State<UpdateClient> {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Client2()));
     } else {
-      print("error : " + res);
+      //print("error : " + res);
+      errorSnakeBar(context, "error : " + res);
     }
   }
 
@@ -104,7 +106,7 @@ class _UpdateClientState extends State<UpdateClient> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Update Client'),
+        title: Text('Modification du Client'),
       ),
       body: Center(
         child: Container(
@@ -122,7 +124,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.person,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Noms',
                     labelText: 'Noms*',
@@ -140,7 +142,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.supervised_user_circle,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Profession',
                     labelText: 'Profession*',
@@ -158,7 +160,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity_rounded,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'Type piece identite',
@@ -176,7 +178,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'numero piece identite',
@@ -194,7 +196,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.home_filled,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Adresse',
                     labelText: 'Adresse*',
@@ -209,10 +211,7 @@ class _UpdateClientState extends State<UpdateClient> {
                 child: TextField(
                   controller: contact,
                   decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.phone,
-                      color: Colors.green[700],
-                    ),
+                    icon: Icon(Icons.phone, color: Colors.blue),
                     fillColor: Colors.red,
                     hintText: 'Telephone +243 ...',
                     labelText: 'Telephone +243 ...*',
@@ -236,10 +235,7 @@ class _UpdateClientState extends State<UpdateClient> {
                   style: TextStyle(fontSize: 16, color: Colors.black),
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.email,
-                      color: Colors.green[700],
-                    ),
+                    icon: Icon(Icons.email, color: Colors.blue),
                     labelText: "Adresse Mail*",
                     errorText: _mail ? 'mail Can\'t be empty' : null,
                     contentPadding: new EdgeInsets.symmetric(

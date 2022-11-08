@@ -29,7 +29,7 @@ class _Client2State extends State<Client2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CRUD'),
+        title: Text('INFOS CLIENTS'),
       ),
       body: new FutureBuilder<List>(
           future: getData(),

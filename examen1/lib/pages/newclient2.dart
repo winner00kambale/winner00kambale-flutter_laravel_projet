@@ -80,7 +80,7 @@ class _ClientNew2State extends State<ClientNew2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        backgroundColor: Colors.green[700],
+        //backgroundColor: Colors.green[700],
         toolbarHeight: 60,
         foregroundColor: Colors.white,
         title: Text(
@@ -116,7 +116,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.person,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Noms',
                     labelText: 'Noms*',
@@ -160,7 +160,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.supervised_user_circle,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Profession',
                     labelText: 'Profession*',
@@ -203,7 +203,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity_rounded,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'Type piece identite',
@@ -221,7 +221,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.perm_identity,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'numero piece identite',
@@ -239,7 +239,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.home_filled,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     hintText: 'Adresse',
                     labelText: 'Adresse*',
@@ -256,7 +256,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.phone,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     fillColor: Colors.red,
                     hintText: 'Telephone +243 ...',
@@ -283,7 +283,7 @@ class _ClientNew2State extends State<ClientNew2> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.email,
-                      color: Colors.green[700],
+                      color: Colors.blue,
                     ),
                     labelText: "Adresse Mail*",
                     errorText: _mail ? 'mail Can\'t be empty' : null,

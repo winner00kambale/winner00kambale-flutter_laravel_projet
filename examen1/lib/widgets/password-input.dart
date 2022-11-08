@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:examen1/pages/pallete.dart';
+// import 'package:flutter/material.dart';
+// import 'package:examen1/pages/pallete.dart';
 
 // class PasswordInput extends StatelessWidget {
 //   const PasswordInput({
