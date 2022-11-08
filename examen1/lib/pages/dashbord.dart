@@ -41,7 +41,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         size: 70.0,
                         color: Colors.blue,
                       ),
-                      Text("CLIENTS", style: new TextStyle(fontSize: 17.0)),
+                      Text("Clients", style: new TextStyle(fontSize: 17.0)),
                     ],
                   ),
                 ),
@@ -57,11 +57,12 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.home,
+                        Icons.person,
                         size: 70.0,
                         color: Colors.blue,
                       ),
-                      Text("Homme", style: new TextStyle(fontSize: 17.0)),
+                      Text("Proprietaire",
+                          style: new TextStyle(fontSize: 17.0)),
                     ],
                   ),
                 ),
@@ -77,11 +78,32 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.home,
+                        Icons.money_off_outlined,
                         size: 70.0,
                         color: Colors.blue,
                       ),
-                      Text("Homme", style: new TextStyle(fontSize: 17.0)),
+                      Text("Chargement Compte",
+                          style: new TextStyle(fontSize: 17.0)),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {},
+                splashColor: Colors.green,
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.money_off_outlined,
+                        size: 70.0,
+                        color: Colors.blue,
+                      ),
+                      Text("Payement", style: new TextStyle(fontSize: 17.0)),
                     ],
                   ),
                 ),
