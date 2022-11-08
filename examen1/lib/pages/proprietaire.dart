@@ -93,7 +93,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                       decoration: InputDecoration(
                         icon: Icon(
                           Icons.person,
-                          color: Colors.green[700],
+                          color: Colors.blue,
                         ),
                         hintText: 'Nom',
                         labelText: 'Nom*',
@@ -107,7 +107,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                       decoration: InputDecoration(
                         icon: Icon(
                           Icons.supervised_user_circle,
-                          color: Colors.green[700],
+                          color: Colors.blue,
                         ),
                         hintText: 'Postnom',
                         labelText: 'Postnom*',
@@ -121,7 +121,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                       decoration: InputDecoration(
                         icon: Icon(
                           Icons.phone,
-                          color: Colors.green[700],
+                          color: Colors.blue,
                         ),
                         fillColor: Colors.red,
                         hintText: 'Telephone +243 ...',
@@ -145,7 +145,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                       decoration: InputDecoration(
                         icon: Icon(
                           Icons.email,
-                          color: Colors.green[700],
+                          color: Colors.blue,
                         ),
                         labelText: "Adresse Mail*",
                         contentPadding: new EdgeInsets.symmetric(
@@ -162,7 +162,7 @@ class _PriprietairePageState extends State<PriprietairePage> {
                       decoration: InputDecoration(
                         icon: Icon(
                           Icons.home_filled,
-                          color: Colors.green[700],
+                          color: Colors.blue,
                         ),
                         hintText: 'Adresse',
                         labelText: 'Adresse*',
