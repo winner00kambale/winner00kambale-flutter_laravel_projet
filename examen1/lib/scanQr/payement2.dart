@@ -41,7 +41,13 @@ class _Payement2State extends State<Payement2> {
       //Navigator.pop(context);
       // Navigator.push(
       //     context, MaterialPageRoute(builder: (context) => Client2()));
-      errorSnakeBar(context, "Payement avec succes");
+      // Fluttertoast.showToast(
+      //     msg: 'Payement avec succes',
+      //     toastLength: Toast.LENGTH_SHORT,
+      //     timeInSecForIosWeb: 2,
+      //     backgroundColor: Colors.blue,
+      //     textColor: Colors.white);
+      errorSnakeBar(context, "Payement avec succes" + res);
     } else {
       print("error : " + res);
       errorSnakeBar(context, "Erreur de payement" + res);

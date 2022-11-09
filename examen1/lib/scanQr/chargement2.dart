@@ -42,7 +42,22 @@ class _Chargement2State extends State<Chargement2> {
       //Navigator.pop(context);
       // Navigator.push(
       //     context, MaterialPageRoute(builder: (context) => Client2()));
-      errorSnakeBar(context, "Chargement avec succes");
+      // Fluttertoast.showToast(
+      //     msg: "Chargement avec succes",
+      //     toastLength: Toast.LENGTH_SHORT,
+      //     gravity: ToastGravity.BOTTOM,
+      //     timeInSecForIosWeb: 1,
+      //     backgroundColor: Colors.yellow,
+      //     textColor: Colors.white,
+      //     fontSize: 18.0);
+
+      // Fluttertoast.showToast(
+      //     msg: 'Chargement avec succes',
+      //     toastLength: Toast.LENGTH_SHORT,
+      //     timeInSecForIosWeb: 2,
+      //     backgroundColor: Colors.blue,
+      //     textColor: Colors.white);
+      errorSnakeBar(context, "Chargement avec succes" + res);
     } else {
       print("error : " + res);
       errorSnakeBar(context, "Erreur de Chargement" + res);

@@ -40,6 +40,20 @@ class _ClientNewState extends State<ClientNew> {
       "contact": contact.text,
       "montant_compte": a,
     });
+    // Fluttertoast.showToast(
+    //     msg: "Client Inserer avec succes",
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.BOTTOM,
+    //     timeInSecForIosWeb: 1,
+    //     backgroundColor: Colors.yellow,
+    //     textColor: Colors.white,
+    //     fontSize: 16.0);
+    // Fluttertoast.showToast(
+    //     msg: 'Client Inserer avec succes',
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     timeInSecForIosWeb: 2,
+    //     backgroundColor: Colors.blue,
+    //     textColor: Colors.white);
   }
 
   final items = ['Masculin', 'Feminin'];
@@ -278,13 +292,23 @@ class _ClientNewState extends State<ClientNew> {
   }
 }
 
-// void showmessage() => Fluttertoast.showToast(
-//       msg: "Insertion avec succes",
-//       fontSize: 50,
-//       gravity: ToastGravity.TOP,
-//       backgroundColor: Colors.green[700],
-//       textColor: Colors.white,
+// fToast.showToast(
+//         child: toast,
+//         gravity: ToastGravity.BOTTOM,
+//         toastDuration: Duration(seconds: 2),
 //     );
+
+//     // Custom Toast Position
+//     fToast.showToast(
+//         child: toast,
+//         toastDuration: Duration(seconds: 2),
+//         positionedToastBuilder: (context, child) {
+//           return Positioned(
+//             child: child,
+//             top: 16.0,
+//             left: 16.0,
+//           );
+//         });
 
 DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,
