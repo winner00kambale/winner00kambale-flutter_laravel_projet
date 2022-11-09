@@ -1,3 +1,4 @@
+import 'package:examen1/pages/Proprietaire2.dart';
 import 'package:examen1/pages/client2.dart';
 import 'package:examen1/scanQr/chargement2.dart';
 import 'package:examen1/scanQr/payement2.dart';
@@ -52,7 +53,10 @@ class _DashboardPageState extends State<DashboardPage> {
             Card(
               margin: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Proprietaire2()));
+                },
                 splashColor: Colors.green,
                 child: Center(
                   child: Column(
