@@ -1,4 +1,6 @@
 import 'package:examen1/pages/client2.dart';
+import 'package:examen1/scanQr/chargement2.dart';
+import 'package:examen1/scanQr/payement2.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -13,19 +15,19 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/logo.png'),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
-          ),
-        ),
-        padding: EdgeInsets.all(30.0),
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage('assets/images/logo.png'),
+        //     fit: BoxFit.cover,
+        //     colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+        //   ),
+        // ),
+        padding: EdgeInsets.all(25.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(9.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -71,7 +73,10 @@ class _DashboardPageState extends State<DashboardPage> {
             Card(
               margin: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Chargement2()));
+                },
                 splashColor: Colors.green,
                 child: Center(
                   child: Column(
@@ -92,7 +97,10 @@ class _DashboardPageState extends State<DashboardPage> {
             Card(
               margin: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Payement2()));
+                },
                 splashColor: Colors.green,
                 child: Center(
                   child: Column(
