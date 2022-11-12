@@ -50,9 +50,18 @@ class _ClientNew2State extends State<ClientNew2> {
     });
     var res = response.body;
     if (res == "true") {
-      //Navigator.pop(context);
+      // errorSnakeBar(context, "coll");
+      // Navigator.pop(context);
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Client2()));
+      // CoolAlert.show(
+      //   context: context,
+      //   type: CoolAlertType.success,
+      //   text: 'Inserted successfully!',
+      //   autoCloseDuration: Duration(seconds: 2),
+      // );
+      // text: 'Success',
+      // color: Colors.green,
     } else {
       print("error : " + res);
       errorSnakeBar(context, "Erreur d\'insertion" + res);

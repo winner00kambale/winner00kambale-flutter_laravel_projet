@@ -1,5 +1,6 @@
 // @dart=2.9
 //import 'package:examen1/pages/client2.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:examen1/pages/newclient2.dart';
 import 'package:examen1/pages/newproprietaire2.dart';
 import 'package:examen1/scanQr/chargementcompte.dart';

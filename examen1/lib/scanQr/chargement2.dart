@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io' show Platform;
 
 import 'package:barcode_scan2/barcode_scan2.dart';
+import 'package:examen1/home.dart';
+import 'package:examen1/main.dart';
 import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,6 +26,7 @@ class _Chargement2State extends State<Chargement2> {
 
   TextEditingController Chargement = TextEditingController(),
       montant = new TextEditingController();
+  bool _montant = false;
 
   static final _possibleFormats = BarcodeFormat.values.toList()
     ..removeWhere((e) => e == BarcodeFormat.unknown);
@@ -38,29 +41,15 @@ class _Chargement2State extends State<Chargement2> {
       "montant": montant.text,
     });
     var res = response.body;
-    if (res == "true") {
-      //Navigator.pop(context);
-      // Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => Client2()));
-      // Fluttertoast.showToast(
-      //     msg: "Chargement avec succes",
-      //     toastLength: Toast.LENGTH_SHORT,
-      //     gravity: ToastGravity.BOTTOM,
-      //     timeInSecForIosWeb: 1,
-      //     backgroundColor: Colors.yellow,
-      //     textColor: Colors.white,
-      //     fontSize: 18.0);
-
-      // Fluttertoast.showToast(
-      //     msg: 'Chargement avec succes',
-      //     toastLength: Toast.LENGTH_SHORT,
-      //     timeInSecForIosWeb: 2,
-      //     backgroundColor: Colors.blue,
-      //     textColor: Colors.white);
-      errorSnakeBar(context, "Chargement avec succes" + res);
-    } else {
-      print("error : " + res);
-      errorSnakeBar(context, "Erreur de Chargement" + res);
+    if (res == 'true') {
+      errorSnakeBar(context, "Chargement avec succes");
+    } else if (res == 'false') {
+      //print("error : " + res);
+      errorSnakeBar(context, "Erreur ! Le montant doit etre > à 0 ");
+    } else if (res == '0') {
+      errorSnakeBar(context, "Attention !!! Ce compte n\'existe pas");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     }
   }
 
@@ -77,54 +66,68 @@ class _Chargement2State extends State<Chargement2> {
   @override
   Widget build(BuildContext context) {
     final scanResult = this.scanResult;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Chargement Du Compte Client'),
-        ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.camera),
-              tooltip: 'Scan',
-              onPressed: _scan,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: TextField(
-                controller: montant,
-                decoration: InputDecoration(
-                  labelText: 'Montant (Fc)',
-                ),
-              ),
-            ),
-            if (scanResult != null)
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      title: const Text('Noms Abonné'),
-                      subtitle: Text(scanResult.rawContent),
-                    ),
-                  ],
-                ),
-              ),
-            Padding(
-              padding: EdgeInsets.all(25.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  ChargementCompte();
-                  errorSnakeBar(context, 'Chargement efectué avec succes');
-                },
-                child: Text('Save'),
-              ),
-            ),
-          ],
+    return Scaffold(
+      //debugShowCheckedModeBanner: false,
+      //home: Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 60,
+        foregroundColor: Colors.white,
+        title: Text(
+          'Chargement Du Compte Client',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
       ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        children: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.camera),
+            tooltip: 'Scan',
+            onPressed: _scan,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextField(
+              controller: montant,
+              decoration: InputDecoration(
+                labelText: 'Montant (Fc)',
+                errorText: _montant ? 'Montant Can\'t be empty' : null,
+              ),
+            ),
+          ),
+          if (scanResult != null)
+            Card(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    title: const Text('Noms Abonné'),
+                    subtitle: Text(scanResult.rawContent),
+                  ),
+                ],
+              ),
+            ),
+          Padding(
+            padding: EdgeInsets.all(25.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  montant.text.isEmpty ? _montant = true : _montant = false;
+                  if (_montant == false) {
+                    ChargementCompte();
+                    montant.clear();
+                  }
+                });
+              },
+              child: Text('Save'),
+            ),
+          ),
+        ],
+      ),
+      //),
     );
   }
 

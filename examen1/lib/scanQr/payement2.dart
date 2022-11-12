@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io' show Platform;
 
 import 'package:barcode_scan2/barcode_scan2.dart';
+import 'package:examen1/main.dart';
+import 'package:examen1/pages/client2.dart';
 import 'package:examen1/services/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,8 @@ class _Payement2State extends State<Payement2> {
 
   TextEditingController Payement = TextEditingController(),
       nombreplace = new TextEditingController();
+
+  bool _nombreplace = false;
 
   var _aspectTolerance = 0.00;
   var _numberOfCameras = 0;
@@ -36,21 +40,22 @@ class _Payement2State extends State<Payement2> {
       "noms": scanResult!.rawContent,
       "nbplace": nombreplace.text,
     });
-    var res = response.body;
-    if (res == "true") {
-      //Navigator.pop(context);
-      // Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => Client2()));
-      // Fluttertoast.showToast(
-      //     msg: 'Payement avec succes',
-      //     toastLength: Toast.LENGTH_SHORT,
-      //     timeInSecForIosWeb: 2,
-      //     backgroundColor: Colors.blue,
-      //     textColor: Colors.white);
-      errorSnakeBar(context, "Payement avec succes" + res);
-    } else {
-      print("error : " + res);
-      errorSnakeBar(context, "Erreur de payement" + res);
+
+    //txt1.text = response.body;
+    String res = response.body;
+    // print(res);
+    if (res == 'true') {
+      errorSnakeBar(context, "Payement avec succes");
+    } else if (res == 'false') {
+      //print("error : " + res);
+      errorSnakeBar(
+          context, "Erreur de payement, Votre montant est insuffisant");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Client2()));
+    } else if (res == '0') {
+      errorSnakeBar(context, "Attention !!! Ce compte n\'existe pas");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     }
   }
 
@@ -67,54 +72,70 @@ class _Payement2State extends State<Payement2> {
   @override
   Widget build(BuildContext context) {
     final scanResult = this.scanResult;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Payement Du Client'),
-        ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.camera),
-              tooltip: 'Scan',
-              onPressed: _scan,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: TextField(
-                controller: nombreplace,
-                decoration: InputDecoration(
-                  labelText: 'Nombre de places',
-                ),
-              ),
-            ),
-            if (scanResult != null)
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      title: const Text('Noms Abonné'),
-                      subtitle: Text(scanResult.rawContent),
-                    ),
-                  ],
-                ),
-              ),
-            Padding(
-              padding: EdgeInsets.all(25.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  PayementTrans();
-                  errorSnakeBar(context, 'payement efectué avec succes');
-                },
-                child: Text('Save'),
-              ),
-            ),
-          ],
+    return Scaffold(
+      //debugShowCheckedModeBanner: false,
+      // home: Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 60,
+        foregroundColor: Colors.white,
+        title: Text(
+          'Payement Du Client',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
       ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        children: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.camera),
+            tooltip: 'Scan',
+            onPressed: _scan,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: TextField(
+              controller: nombreplace,
+              decoration: InputDecoration(
+                labelText: 'Nombre de places',
+                errorText: _nombreplace ? 'nombreplace Can\'t be empty' : null,
+              ),
+            ),
+          ),
+          if (scanResult != null)
+            Card(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    title: const Text('Noms Abonné'),
+                    subtitle: Text(scanResult.rawContent),
+                  ),
+                ],
+              ),
+            ),
+          Padding(
+            padding: EdgeInsets.all(25.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  nombreplace.text.isEmpty
+                      ? _nombreplace = true
+                      : _nombreplace = false;
+                  if (_nombreplace == false) {
+                    PayementTrans();
+                    nombreplace.clear();
+                  }
+                });
+              },
+              child: Text('Save'),
+            ),
+          ),
+        ],
+      ),
+      // ),
     );
   }
 
