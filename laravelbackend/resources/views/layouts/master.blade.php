@@ -182,7 +182,7 @@
 						</a>
 						<ul class="submenu">
 						<li><a href="{{ route('paramettrePrice') }}">Update price</a></li>
-						<li><a href="#">Payement</a></li>
+						
 						</ul>
 					</li>
 				</ul>

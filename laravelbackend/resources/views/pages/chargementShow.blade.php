@@ -1,6 +1,26 @@
 @extends('layouts.master')
 @section('contenu')
     <div class="card-box mb-30">
+    <div class="pd-5">
+            <form action="{{ route('rapportChargement.show') }}" method="POST" target="_blank">
+			@csrf
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for=""> Date debut</label>
+                            <input type="date" name="date1" id="date1" class="form-control btn-round">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for=""> Date fin</label>
+                            <input type="date" name="date2" id="date2" class="form-control btn-round">
+                        </div>
+                    </div>
+                </div>  
+                    <h3 class="box-title">
+                        <button type="submit" class="btn btn-primary" name="submit" target="_blank"><i class="fa fa-print"></i></button>
+                    </h3>
+            </form> 
+        </div>
         <div class="container overflow-hidden"> <br>
             <div class="multisteps-form">
                 <!--progress bar-->
@@ -45,8 +65,8 @@
 													<i class="dw dw-more"></i>
 												</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+                                            <a class="dropdown-item" href="{{ '/detailChragement/'.$item->noms }}" target="_blank"><i class="dw dw-print" ></i> Print</a>
+												<!-- <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a> -->
 											</div>
 											</div>
 										</td>

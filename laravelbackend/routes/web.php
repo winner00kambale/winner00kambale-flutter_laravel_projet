@@ -41,5 +41,11 @@ Route::get('/Price', [ParameterPriceController::class, 'GetPrice'])->name('param
 Route::post('/updatePrice', [ParameterPriceController::class, 'store'])->name('Price.price');
 
 //rapport 
-Route::post('/rapport/show',[ClientController::class, 'rapport'])->name('rapport.show');
+Route::post('/rapport/show', [ClientController::class, 'rapport'])->name('rapport.show');
 Route::get('/detail/{nom}', [ClientController::class, 'detail'])->name('detail');
+Route::post('/rapportChargement/show', [ClientController::class, 'rapportChargement'])->name('rapportChargement.show');
+Route::get('/detailChragement/{nom}', [ClientController::class, 'detailChragement'])->name('detailChragement');
+
+
+
+

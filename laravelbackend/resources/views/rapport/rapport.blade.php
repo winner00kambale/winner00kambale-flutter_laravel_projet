@@ -20,7 +20,7 @@
                         <i class="fa fa-globe"></i> Trans - Ville <br>
                         <small class="pull-right">BP : 00290/389</small> <br>
                         @foreach ($total as $item)
-                        <small class="pull-right">Total : {{ $item->total }} </small>
+                        <small class="pull-right">Total : {{ $item->total }} Fc</small>
                         @endforeach
                         </h2>
                     </div>
@@ -50,7 +50,7 @@
 									<td>{{ $item->id }}</td>
                                     <td>{{ $item->noms }}</td>
                                     <td>{{ $item->nombre_place }}</td>
-                                    <td>{{ $item->montant }}</td>
+                                    <td>{{ $item->montant }} Fc</td>
                                     <td>{{ $item->marque }}</td>
                                     <td>{{ $item->plaque }}</td>
                                     <td>{{ $item->date_payement }}</td>

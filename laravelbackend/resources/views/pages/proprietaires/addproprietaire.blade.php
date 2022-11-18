@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="button-row d-flex mt-4">
-                                        <a class="btn btn-primary js-btn-prev" href="{{ route('addproprietaire') }}">Annuler</a>
+                                        <a class="btn btn-primary js-btn-prev" href="{{ route('proprietaire.index') }}">Annuler</a>
                                         <button class="btn btn-success ml-auto" type="submit" title="Send">Ajouter</button>
                                     </div>
                                 </div>
