@@ -51,7 +51,7 @@
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-xs-3 ml-5">
-                                                        <img src="{{ asset('src/images/win.jpg') }}" style="margin-top: 10px; margin-left: 10px; margin-rigth: 0px;  weigth: 200px; height: 120px;" class="img-responsive img-thumbnail">
+                                                        <img src="{{ asset('src/images/av.png') }}" style="margin-top: 10px; margin-left: 10px; margin-rigth: 0px;  weigth: 200px; height: 120px;" class="img-responsive img-thumbnail">
                                                         </div>
 
                                                         <div class="col-xs-9 ml-5">
